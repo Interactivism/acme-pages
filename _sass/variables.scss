@@ -1,0 +1,11 @@
+$link-color: #3292b7;
+$text-color: #85929e;
+$main-font: 'Museo';
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}

@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+<div class="row">
+	<div class="col s12">
+		{% for category in site.data.categories %}
+      {% if category.cat == page.title %}
+        <h1> {{category.title}} </h1>
+        <p> {{category.description}} </p>
+        {% break %}
+      {% endif %}
+    {% endfor %}
+	</div>
+</div>
+
+<div class="row">
+	<div class="col s12 m3 categories-cloud center-align">
+		<a href="{{ site.baseurl }}/" class="chip">all</a>
+		{% assign categories_list = site.categories %}
+		  {% if categories_list.first[0] == null %}
+		    {% for category in categories_list %}
+		      <a href="{{ site.baseurl }}/{{ category}}/" class="chip {% if category == page.title %} active {% endif %}">{{ category }}</a>
+		    {% endfor %}
+		  {% else %}
+		    {% for category in categories_list %}
+		      <a href="{{ site.baseurl }}/{{ category[0]}}/" class="chip {% if category[0] == page.title %} active {% endif %}">{{ category[0] }}</a>
+		    {% endfor %}
+		  {% endif %}
+		{% assign categories_list = nil %}
+	</div>
+
+	{% if page.paginator %}
+		{% assign paginator = page.paginator %}
+	{% endif %}
+
+	<div class="col s12 m9 cards-block">
+		<div class="row cards-wrap">
+			{% include list-posts.html posts=paginator.posts %}
+		</div>
+		
+		{% if paginator.total_pages > 1 %}
+			<!-- Pagination links -->
+			<div class="row">
+				<ul class="pagination center-align">
+					{% if paginator.previous_page == 1 %}
+						<li class="waves-effect"><a href="{{ site.baseurl }}/{{ page.title}}/"><i class="material-icons">chevron_left</i></a></li>
+					{% elsif paginator.previous_page %}
+						<li class="waves-effect"><a href="{{ site.baseurl }}/{{ page.title}}/page{{paginator.previous_page}}"><i class="material-icons">chevron_left</i></a></li>
+					{% else %}
+						<li class="disabled"><a href="#"><i class="material-icons">chevron_left</i></a></li>
+					{% endif %}
+
+					{% for pagenum in (1..paginator.total_pages) %}
+				    {% if pagenum == paginator.page %}
+				    	<li class="active"><a href="#">{{ pagenum }}</a></li>
+				    {% elsif pagenum == 1 %}
+				    	<li class="waves-effect"><a href="{{ site.baseurl }}/{{ page.title}}/">{{ pagenum }}</a></li>
+				    {% else %}
+				    	<li class="waves-effect"><a href="{{ site.baseurl }}/{{ page.title}}/page{{pagenum}}">{{ pagenum }}</a></li>
+				    {% endif %}
+				  {% endfor %}
+
+					{% if paginator.next_page %}
+						<li class="waves-effect"><a href="{{ site.baseurl }}/{{ page.title}}/page{{paginator.next_page}}"><i class="material-icons">chevron_right</i></a></li>
+					{% else %}
+						<li class="disabled"><a href="#"><i class="material-icons">chevron_right</i></a></li>
+					{% endif %}
+				</ul>
+			</div>
+		{% endif %}
+	</div>
+</div>

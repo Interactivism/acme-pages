@@ -1,0 +1,61 @@
+# ----
+# Site
+
+title: Acme docs
+
+permalink: /:title/
+
+category_dir: "/"
+category_layout: "/_layouts/archive.html"
+
+excerpt_separator: <!--more-->
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
+
+jekyll-archives:
+  enabled:
+    - categories
+
+autoprefixer:
+  browsers:
+  - last 2 versions
+
+gems:
+  - jekyll-archives
+  - jekyll-sitemap
+  - jekyll-autoprefixer
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENCE
+  - node_modules/
+
+# -----------
+# CloudCannon
+_editable_regions:
+  image:
+    url_src: true
+    
+social_icons:
+  - Facebook
+  - Google Plus
+  - Instagram
+  - LinkedIn
+  - Pinterest
+  - Tumblr
+  - Twitter
+  - YouTube
+  - RSS
