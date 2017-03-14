@@ -7,8 +7,6 @@
 
 .header-logo {
   display: inline-block;
-  height: 58px;
-  width: 103px;
   vertical-align: middle;
   img {
     display: block;
@@ -25,12 +23,13 @@
 
 .versions-list {
   position: absolute;
-  right: -7px;
+  right: 57px;
   top: 38px;
   width: 150px;
   background-color: #c8cbd8;
   border-radius: 5px;
   overflow: hidden;
+  z-index: 100;
   &:after {
     content: '';
     position: absolute;
@@ -46,19 +45,19 @@
       transform: rotate(180deg);
     }
   }
-}
-
-.versions-item {
-  padding-left: 10px;
-  a {
-    color: #5b6269;
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 24px;
-    text-transform: uppercase;
-    transition: color 0.3s;
-    &:hover {
-      color: #fff;
+  &__item {
+    padding-left: 10px;
+    a {
+      display: inline-block;
+      color: #5b6269;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 24px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+      &:hover {
+        color: #fff;
+      }
     }
   }
 }

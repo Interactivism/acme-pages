@@ -1,0 +1,13 @@
+- name: Admin1
+  keywords:
+    - application
+    - architecture
+    - build
+    - capacity
+    - configure
+- name: Admin2
+  keywords:
+    - metrics
+    - orchestration
+    - quotas
+    - security

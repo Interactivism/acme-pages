@@ -3,7 +3,7 @@
 
 title: Acme docs
 
-permalink: /:title/
+permalink: /articles/:title
 
 category_dir: "/"
 category_layout: "/_layouts/archive.html"

@@ -1,5 +1,33 @@
 .footer {
-  border-top: 2px solid #c8cbd8;
+  border-top: 3px solid #c8cbd8;
   padding-bottom: 33px;
   padding-top: 33px;
+}
+
+.copyright {
+  color: #aaadb8;
+  font-size: 12px;
+}
+
+.footer-links {
+  float: right;
+  margin-right: 14px;
+  @include clearfix;
+  &__item {
+    float: left;
+    border-right: 1px solid #c8cbd8;
+    padding-left: 7px;
+    padding-right: 7px;
+    &:last-child {
+      border-right: none;
+    }
+    a {
+      color: #aaadb8;
+      font-size: 12px;
+      transition: color 0.3s;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
 }
