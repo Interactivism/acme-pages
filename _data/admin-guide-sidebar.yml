@@ -2,12 +2,13 @@
   keywords:
     - application
     - architecture
-    - build
-    - capacity
-    - configure
 - name: Admin2
   keywords:
     - metrics
     - orchestration
+- name: Admin3
+  keywords:
+    - build
+- name: Admin4
+  keywords:
     - quotas
-    - security

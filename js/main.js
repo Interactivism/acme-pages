@@ -15,7 +15,7 @@ $(function(){
 
   $('.submenu__title').on('click', function(e) {
     e.preventDefault();
-    $(this).parent().toggleClass('closed');
+    $(this).parent().toggleClass('opened');
   });
 
   $('.search-input').focusin(function() {

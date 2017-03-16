@@ -1,0 +1,19 @@
+<aside class="sidebar">
+  
+  <h3 class="sidebar-title">Installation Guide</h3>
+  
+  <ul class="sidebar-accordion">
+    {% for submenu in site.data.admin-guide-sidebar %}
+      <li class="submenu closed">
+        <a href="#" class="submenu__title">{{ submenu.name }}</a>
+        <ul>
+          {% for keyword in submenu.keywords %}
+            <li class="submenu__tag {% if page.title == keyword %}active{% endif %} "><a href="../{{keyword}}/">{{keyword}}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+ 
+  {% include sidebar-footer.html %}
+</aside>

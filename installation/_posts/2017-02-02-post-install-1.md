@@ -1,9 +1,7 @@
 ---
-title: Post 56
+title: Post install 1
 categories:
-  - Configure
-  - Application
-  - Security
+  - build
 date: 2017-02-02 00:00:00
 ---
 

@@ -4,11 +4,6 @@ layout: default
 
 <div id="home-search" class="container">
 
-  <span id="search">
-    <p><i class="glyphicon glyphicon-search"></i> &nbsp;Search Docs</p>
-  </span>
-  <br/>
-
   <form role="search" action="{{ site.baseurl }}/search/index.html" id="site_search">
     <div class="input-group" id="search-container">
       <label for="sort-by">Sort by</label>
@@ -24,8 +19,6 @@ layout: default
       </span>
     </div>
   </form>
-
-  <br/><br/>
 
   <div id="search_results"></div>
 </div>

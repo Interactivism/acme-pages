@@ -95,12 +95,12 @@ jQuery(function() {
 
         results.forEach(function(result) {
           var item = loadedData[result.ref];
-          var appendString = '<a href="'+item.url.trim()+'">'+item.title+'</a><div class="updated">'+item.updated+'</div><p>'+item.excerpt+'</p><br/>';
+          var appendString = '<a href="'+item.url.trim()+'">'+item.title+'</a><div class="updated">'+item.updated+'</div><p>'+item.excerpt+'</p>';
 
           $searchResults.append(appendString);
         });
       } else {
-        $searchResults.html('<p>Your search did not match any documents.<br/>Make sure that all words are spelled correctly or try more general keywords.</p>');
+        $searchResults.html('<p>Your search did not match any documents.</p><p>Make sure that all words are spelled correctly or try more general keywords.</p>');
       }
     });
   }

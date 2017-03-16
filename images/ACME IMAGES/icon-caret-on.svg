@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="6px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>global-caret-off</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Interactivism-Documentation-Project-2017-03-01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="23" transform="translate(-289.000000, -495.000000)" fill="#8F989F">
+            <path d="M294,498.919497 L290.572308,495.519819 L290.048205,495 L289,496.039639 L289.524103,496.559458 L292.951795,499.959136 L292.950559,499.960361 L293.998765,501 L294,500.998775 L294.001235,501 L295.049441,499.960361 L295.048205,499.959136 L298.475897,496.559458 L299,496.039639 L297.951795,495 L297.427692,495.519819 L294,498.919497 Z" id="global-caret-off" transform="translate(294.000000, 498.000000) rotate(180.000000) translate(-294.000000, -498.000000) "></path>
+        </g>
+    </g>
+</svg>
