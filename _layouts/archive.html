@@ -2,29 +2,32 @@
 layout: default
 ---
 
+{% include header.html %}
+{% include subheader-category.html %}
+
 <div class="container container-article">
   {% include sidebar-category.html %}
   {% if page.title == 'admin' %}
     <div class="guide-main">
-      <img src="{{site.baseurl}}/images/logo.jpg" alt="logo">
+      <img src="{{site.baseurl}}/images/logo.png" alt="logo" class="guide-main__logo">
       <h1 class="guide-main__title">Acme admin guide</h1>
       <p class="guide-main__descr">This guide provides guidance for administrating Acme. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
     </div>
   {% elsif page.title == 'user' %}
     <div class="guide-main">
-      <img src="{{site.baseurl}}/images/logo.jpg" alt="logo">
+      <img src="{{site.baseurl}}/images/logo.png" alt="logo" class="guide-main__logo">
       <h1 class="guide-main__title">Acme user guide</h1>
       <p class="guide-main__descr">This guide provides guidance for using Acme. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
     </div>
   {% elsif page.title == 'installation' %}
     <div class="guide-main">
-      <img src="{{site.baseurl}}/images/logo.jpg" alt="logo">
+      <img src="{{site.baseurl}}/images/logo.png" alt="logo" class="guide-main__logo">
       <h1 class="guide-main__title">Acme installation guide</h1>
       <p class="guide-main__descr">This guide provides guidance for installing Acme. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
     </div>
   {% elsif page.title == 'release' %}
     <div class="guide-main">
-      <img src="{{site.baseurl}}/images/logo.jpg" alt="logo">
+      <img src="{{site.baseurl}}/images/logo.png" alt="logo" class="guide-main__logo">
       <h1 class="guide-main__title">Acme release notes</h1>
       <p class="guide-main__descr">This section includes release notes for all Acme releases.</p>
     </div>

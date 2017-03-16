@@ -1,0 +1,24 @@
+<section class="subheader">
+  <div class="container">
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="/" class="home-link">Home</a></li>
+      <li class="nav-item guides-menu">
+        <a href="#" class="guides-link {% if page.categories contains 'admin' or page.categories contains 'user' or page.categories contains 'installation' %} active {% endif %}">Guides</a>
+        <ul class="guides-list">
+          <li class="guides-item"><a href="../category/admin/">Admin Guide</a></li>
+          <li class="guides-item"><a href="../category/user/">User Guide</a></li>
+          <li class="guides-item"><a href="../category/installation/">Installation Guide</a></li>
+        </ul>
+      </li>
+      <li class="nav-item"><a href="../category/release/" class="release-notes-link {% if page.categories contains 'release' %} active {% endif %}">Release notes</a></li>
+    </ul>
+    <a href="https://support.metacloud.com/hc/en-us" class="support-link" target="_blank">Open a ticket</a>
+    <form id="search-container" class="search-block" role="search" action="../search.html">
+      <div class="search-shadow">
+        <input type="text" name="query" id="search-input" class="search-input" placeholder="FIND ANSWERS" autocomplete="off">
+        <ul id="results-container" class="search-result"></ul>
+        <button class="search-btn" type="submit">Search</button>
+      </div>
+    </form>
+  </div>
+</section>

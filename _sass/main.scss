@@ -71,9 +71,12 @@
   margin-left: 350px;
   padding: 140px 165px 0;
   text-align: center;
+  &__logo {
+    opacity: 0.4;
+  }
   &__title {
-    margin-top: 12px;
-    margin-bottom: 19px;
+    margin-top: 15px;
+    margin-bottom: 25px;
     color: #34495e;
     font-size: 32px;
     text-transform: capitalize;

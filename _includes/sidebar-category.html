@@ -1,19 +1,68 @@
 <aside class="sidebar">
-  
-  <h3 class="sidebar-title">Installation Guide</h3>
-  
-  <ul class="sidebar-accordion">
-    {% for submenu in site.data.admin-guide-sidebar %}
-      <li class="submenu closed">
-        <a href="#" class="submenu__title">{{ submenu.name }}</a>
-        <ul>
+  {% for post in site.categories[page.title] %}
+    {% if post.categories contains 'installation' %}
+      <h3 class="sidebar-title">Installation Guide</h3>
+      <ul class="sidebar-accordion">
+        {% for submenu in site.data.installation-guide-sidebar %}
+          {% assign name = submenu.name %}
+          <li class="submenu {% if page.categories contains name %}opened{% endif %}">
+            <a href="#" class="submenu__title">{{ name }}</a>
+            <ul>
+              {% for post in site.categories[name] %}
+                <li class="submenu__tag {% if page.title == post.title %}active{% endif %} "><a href="../../articles/{{post.title | downcase | split: ' ' | join: '-'}}.html">{{post.title}}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+      {% break %}
+    {% elsif post.categories contains 'admin' %}
+      <h3 class="sidebar-title">Admin Guide</h3>
+      <ul class="sidebar-accordion">
+        {% for submenu in site.data.admin-guide-sidebar %}
+          {% assign opened = false %}
           {% for keyword in submenu.keywords %}
-            <li class="submenu__tag {% if page.title == keyword %}active{% endif %} "><a href="../{{keyword}}/">{{keyword}}</a></li>
+            {% if page.title == keyword %}
+              {% assign opened = true %}
+            {% endif %}
           {% endfor %}
-        </ul>
-      </li>
-    {% endfor %}
-  </ul>
- 
+          <li class="submenu {% if opened %}opened{% endif %}">
+            <a href="#" class="submenu__title">{{ submenu.name }}</a>
+            <ul>
+              {% for keyword in submenu.keywords %}
+                <li class="submenu__tag {% if page.title == keyword %}active{% endif %} "><a href="../{{keyword}}/">{{keyword}}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+      {% break %}
+    {% elsif post.categories contains 'user' %}
+      <h3 class="sidebar-title">User Guide</h3>
+      <ul class="sidebar-accordion">
+        {% for submenu in site.data.user-guide-sidebar %}
+          {% assign opened = false %}
+          {% for keyword in submenu.keywords %}
+            {% if page.title == keyword %}
+              {% assign opened = true %}
+            {% endif %}
+          {% endfor %}
+          <li class="submenu {% if opened %}opened{% endif %}">
+            <a href="#" class="submenu__title">{{ submenu.name }}</a>
+            <ul>
+              {% for keyword in submenu.keywords %}
+                <li class="submenu__tag {% if page.title == keyword %}active{% endif %} "><a href="../{{keyword}}/">{{keyword}}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+        {% endfor %}
+      </ul>
+      {% break %}
+    {% elsif post.categories contains 'release' %}
+      <h3 class="sidebar-title">Release Notes</h3>
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  
   {% include sidebar-footer.html %}
 </aside>

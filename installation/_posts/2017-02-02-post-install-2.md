@@ -1,9 +1,7 @@
 ---
 title: Post install 2
 categories:
-  - build
   - capacity
-  - quotas
 date: 2017-02-02 00:00:00
 ---
 

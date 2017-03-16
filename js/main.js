@@ -45,8 +45,8 @@ $(function(){
     $('.share-block').removeClass('success');
   });
 
-  $('.guides-menu').on('click', function(e) {
+  $('.guides-link').on('click', function(e) {
     e.preventDefault();
-    $(this).toggleClass('opened');
+    $(this).parent().toggleClass('opened');
   });
 });

@@ -1,7 +1,5 @@
 ---
-title: Post user 2
-categories:
-  - orchestration
+title: Post release 2
 date: 2017-02-02 00:00:00
 ---
 
