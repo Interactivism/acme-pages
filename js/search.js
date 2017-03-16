@@ -36,23 +36,13 @@ jQuery(function() {
   });
 
   window.data = $.getJSON('/search.json');
-  window.data.then(function(sourceData){
-    this.loadedData = dataArrayToObject(sourceData);
-
-    $.each(this.loadedData, function(index, value){
+  window.data.then(function(loadedData){
+    $.each(loadedData, function(index, value){
       window.idx.add(
         $.extend({ "id": index }, value)
       );
     });
   });
-
-  function dataArrayToObject(sourceData) {
-    var resultData = sourceData.reduce(function(result, value) {
-        result[value.id] = value;
-        return result;
-    }, {});
-    return resultData;
-  }
 
   if(searchTerm) {
     $("#search_box").val(searchTerm);
@@ -71,14 +61,21 @@ jQuery(function() {
     displaySearchResults();
   });
 
+
+  //Search in header
+  $("#search-container").keyup(function(event){
+    event.preventDefault();
+    displaySearchInHeader();
+  });
+
+  //Search page display
   function displaySearchResults() {
     var query = $("#search_box").val();
     var results = window.idx.search(query);
     var $searchResults = $("#search_results");
 
 
-    window.data.then(function() {
-      var loadedData = this.loadedData;
+    window.data.then(function(loadedData) {
 
       if (results.length) {
         $searchResults.empty();
@@ -101,6 +98,30 @@ jQuery(function() {
         });
       } else {
         $searchResults.html('<p>Your search did not match any documents.</p><p>Make sure that all words are spelled correctly or try more general keywords.</p>');
+      }
+    });
+  }
+
+  function displaySearchInHeader() {
+    var query = $("#search-input").val();
+    var results = window.idx.search(query);
+    var $searchResults = $("#results-container");
+
+    window.data.then(function(loadedData) {
+
+      if (results.length) {
+        $searchResults.empty();
+
+        results.forEach(function(result) {
+          var item = loadedData[result.ref];
+          var appendString = '<li><a href="'+item.url.trim()+'" class="search-result-link">'+item.title+'</a></li>';
+
+          $searchResults.append(appendString);
+        });
+      } else if (query.length > 0) {
+        $searchResults.html('<li>Your search did not match any documents.</li>');
+      } else {
+        $searchResults.empty();
       }
     });
   }

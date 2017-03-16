@@ -49,11 +49,4 @@ $(function(){
     e.preventDefault();
     $(this).toggleClass('opened');
   });
-
-  SimpleJekyllSearch({
-    searchInput: document.getElementById('search-input'),
-    resultsContainer: document.getElementById('results-container'),
-    json: '/search.json',
-    searchResultTemplate: '<li><a href="{url}" class="search-result-link">{title}</a></li>'
-  });
 });
