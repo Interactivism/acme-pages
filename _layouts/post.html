@@ -6,14 +6,59 @@ layout: default
   {% include sidebar.html %}
   
   <div class="article-block">
-    <div class="article-nav">
-      <p class="article-nav__title">Contents</p>
-      <ul class="article-nav__list">
-        <li class="article-nav__item"><a href="#">Starter Configuration</a></li>
-        <li class="article-nav__item"><a href="#">General Purpose Configuration</a></li>
-        <li class="article-nav__item"><a href="#">High Performance Configuration</a></li>
-      </ul>
+    <div class="article-affordance">
+      <button class="article-affordance__btn share">
+        <svg width="20" height="19" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M19.767 15.943h.007v2.113H0v-2.113h.007v-5.06H2.12v5.06h15.534v-5.06h2.113v5.06zm-10.779-3.36L8.953 2.72 5.798 5.872l-1.11-1.145L9.088.3c.391-.394 1.032-.401 1.428-.014l4.517 4.424-1.198 1.127-3.243-3.259v10.005H8.988z" fill="#CCCFDB"/></svg>
+      </button>
+      <span class="article-affordance__line"></span>
+      <button class="article-affordance__btn close"></button>
     </div>
-    {{content}}
+
+    <h1 class="article-title">{{page.title}}</h1>
+
+    <div class="article-contents">
+      <p class="article-contents__title">Contents</p>
+      <ul class="article-contents__list"></ul>
+    </div>
+    
+    <div class="article-main-content">
+      {{content}}
+    </div>
+
+    <p class="article-date">Updated: {{page.date}}</p>
+
+    <div class="article-nav">
+      <button class="article-nav__btn prev">Previous</button>
+      <button class="article-nav__btn next">Next</button>
+    </div>
+
+    <div class="share-overlay">
+      <div class="share-block">
+        <div class="share-form">
+          <button class="share-form__close share-close"></button>
+          <h3 class="share-form__title">Share article</h3>
+          <p class="share-form__text">Copy url</p>
+          <div>
+            <input type="text" class="share-form__url">
+            <button class="share-form__copy">Copy</button>
+          </div>
+          <p class="share-form__separator">OR</p>
+          <p class="share-form__text">Share by email</p>
+          <input type="text" class="share-form__email" placeholder="RECIPIENT EMAIL, SEPARATE BY COMMA">
+          <textarea class="share-form__message" placeholder="MESSAGE OPTIONAL"></textarea>
+          <div class="share-form__actions">
+            <button class="share-form__btn cancel share-close">Cancel</button>
+            <button class="share-form__btn send" disabled>Send</button>
+          </div>
+        </div>
+        <div class="share-success">
+          <div class="share-success__check share-close">
+            <svg width="32" height="25" viewBox="0 0 32 25" xmlns="http://www.w3.org/2000/svg"><path d="M27 0L12 14.999l-7-7-5 5 12 12 20-20z" fill="#FFF"/></svg>
+          </div>
+          <h3 class="share-success__title">Success</h3>
+          <p class="share-success__text">Your message has been sent.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

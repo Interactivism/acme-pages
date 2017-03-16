@@ -1,7 +1,50 @@
-.article-nav {
+.article-affordance {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+
+  &__btn {
+    background-color: transparent;
+    width: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &.close:before, &.close:after {
+      content: '';
+      display: inline-block;
+      height: 20px;
+      width: 2px;
+      background-color: #CCCFDB;
+    }
+
+    &.close:before {
+      margin-right: -2px;
+      transform: rotate(45deg);
+    }
+
+    &.close:after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &__line {
+    display: inline-block;
+    height: 19px;
+    width: 1px;
+    margin: 0 12px;
+    background-color: #edeef3;
+  }
+
+}
+
+.article-contents {
   float: right;
   max-width: 300px;
-  margin: 50px 50px 20px 20px;
+  margin: 0px 50px 20px 20px;
   padding: 20px;
   padding-bottom: 5px;
   background-color: #f9fafc;
@@ -23,12 +66,12 @@
 
 .article-block {
   position: relative;
-  margin: 30px 0 60px 400px;
+  margin: 30px 0px 60px 400px;
   padding: 80px 70px 100px 66px;
   background-color: #fff;
   border-radius: 6px;
 
-  h1 {
+  .article-title {
     margin-bottom: 30px;
     color: #34495e;
     font-size: 20px;
@@ -58,18 +101,19 @@
 
   code {
     display: inline-block;
-    padding: 7px 14px;
+    padding: 4px 10px;
     background-color: #eeeff4;
     border-radius: 5px;
     color: #5b6269;
     font-size: 11px;
   }
 
-  &>code {
+  pre.highlight code {
     display: block;
+    padding: 7px 14px;
   }
 
-  ul:not(.article-nav__list){
+  ul:not(.article-contents__list){
     margin-bottom: 30px;
     margin-top: 30px;
     li {
@@ -87,7 +131,7 @@
         border-radius: 50%;
       }
     }
-  } 
+  }
 
   ol {
     counter-reset: item;
@@ -104,5 +148,241 @@
         color: #415163;
       }
     }
+  }
+}
+
+.article-date {
+  margin-bottom: 80px;
+  margin-top: 60px;
+  font-size: 12px;
+}
+
+.article-nav {
+  &__btn {
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #eeeff4;
+    border-radius: 5px;
+    color: #5b6269;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 37px;
+    text-transform: uppercase;
+
+    &.next {
+      float: right;
+    }
+    
+    &.prev:before, &.next:after {
+      content: '';
+      display: inline-block;
+      height: 6px;
+      width: 6px;
+      border-left: 3px solid currentColor;
+      border-bottom: 3px solid currentColor;
+    }
+
+    &.prev:before {
+      margin-right: 12px;
+      transform: rotate(45deg);
+    }
+
+    &.next:after {
+      margin-left: 12px;
+      transform: rotate(-135deg);
+    }
+  }
+}
+
+.share-overlay {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.share-block {
+  position: absolute;
+  left: 50%;
+  top: 58px;
+  height: 540px;
+  width: 624px;
+  padding: 25px 24px 31px;
+  background-color: #edeef3;
+  border-radius: 5px;
+  box-shadow: 16px 16px 0 0 rgba(0,0,0,0.2); 
+  transform: translate(-50%, 0);
+  
+  &.success .share-success {
+    display: block;
+  }
+
+  &.success .share-form {
+    display: none;
+  }
+}
+
+.share-form {
+  color: #34495e;
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    cursor: pointer;
+    &:before, &:after {
+      content: '';
+      display: inline-block;
+      height: 15px;
+      width: 3px;
+      background-color: #b5bcc6;
+    }
+
+    &:before {
+      margin-right: -3px;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-transform: capitalize;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+
+  &__url {
+    width: 500px;
+    border: solid 1px #c8cbd8;
+    margin-right: -4px;
+    padding: 0 13px;
+    background-color: #fff;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #526476;
+    line-height: 35px;
+  }
+
+  &__copy {
+    width: 76px;
+    background-color: #c8cbd8;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    color: #5b6269;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 37px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #d3d5e0;
+    }
+  }
+
+  &__separator {
+    margin: 40px 0;
+    color: #526476;
+    &:before, &:after {
+      content: '';
+      display: inline-block;
+      height: 1px;
+      width: 46%;
+      margin-bottom: 4px;
+      background-color: #c8cbd8;
+    }
+    &:before {
+      margin-right: 2%;
+    }
+    &:after {
+      margin-left: 2%;
+    }
+  }
+
+  &__email, &__message {
+    display: block;
+    width: 100%;
+    border: 1px solid #c8cbd8;
+    border-radius: 5px;
+  }
+
+  &__email {
+    padding: 0 13px;
+    line-height: 35px;
+  }
+
+  &__message {
+    height: 120px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    padding: 15px 13px;
+  }
+
+  &__actions {
+    text-align: right;
+  }
+
+  &__btn {
+    width: 154px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 37px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    &.send {
+      background-color: #7a8183;
+      color: #fff;
+      &[disabled] {
+        cursor: auto;
+        opacity: 0.4;
+      }
+      &:hover:not([disabled]) {
+        background-color: #999fa5;
+      }
+    }
+    &.cancel {
+      margin-right: 12px;
+      background-color: #adb5ba;
+      color: #5b6269;
+    }
+  }
+}
+
+.share-success {
+  display: none;
+  padding-top: 100px;
+  color: #526476;
+  text-align: center;
+  &__check {
+    display: inline-block;
+    padding: 25px 23px 25px 24px;
+    background-color: #20a9db;
+    border-radius: 50%;
+  }
+  &__title {
+    margin-bottom: 12px;
+    margin-top: 26px;
+    color: #25313e;
+    font-size: 23px;
+  }
+  &__text {
+    font-size: 16px;
   }
 }

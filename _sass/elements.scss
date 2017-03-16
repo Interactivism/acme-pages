@@ -9,6 +9,8 @@ html, body {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
 	min-height: 100vh;
   min-width: 320px;
   background-color: #e2e3ec;
@@ -51,6 +53,10 @@ button {
   padding: 0;
 }
 
+input, textarea, button {
+  font-family: $main-font;
+}
+
 input:focus {
   outline: none;
 }
@@ -61,6 +67,6 @@ input:focus {
   padding-left: 50px;
   padding-right: 50px;
   &-article {
-    overflow: auto;
+    flex: 1;
   }
 }

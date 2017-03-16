@@ -13,12 +13,12 @@
       <li class="nav-item"><a href="#" class="release-notes-link">Release notes</a></li>
     </ul>
     <a href="https://support.metacloud.com/hc/en-us" class="support-link">Open a ticket</a>
-    <div class="search-block">
+    <form id="search-container" class="search-block" role="search" action="/search.html">
       <div class="search-shadow">
-        <input type="text" id="search-input" class="search-input" placeholder="FIND ANSWERS">
-        <button class="search-btn">Search</button>
+        <input type="text" name="query" id="search-input" class="search-input" placeholder="FIND ANSWERS" autocomplete="off">
+        <button class="search-btn" type="submit">Search</button>
       </div>
       <ul id="results-container" class="search-result"></ul>
-    </div>
+    </form>
   </div>
 </section>
