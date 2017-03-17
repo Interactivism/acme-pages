@@ -41,6 +41,13 @@
 .home-link {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
+  svg {
+    margin-bottom: -1px;
+    margin-right: 10px;
+  }
+  .home-icon {
+    fill: currentColor;
+  }
 }
 
 .release-notes-link {
@@ -175,6 +182,21 @@
   z-index: 50;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+
+  &__item {
+    color: #9a9da9;
+    font-size: 13px;
+    line-height: 35px;
+  }
+
+  &__link {
+    display: block;
+    color: #526476;
+  }
+
+  &__catalog {
+    color: #9a9da9;
+  }
 }
 
 .search-input:focus + .search-result{

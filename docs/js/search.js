@@ -45,16 +45,11 @@ jQuery(function() {
   });
 
   if(searchTerm) {
-    $("#search_box").val(searchTerm);
+    $("#search-input").val(searchTerm);
     window.data.then(function(){
       displaySearchResults();
     });
   }
-
-  $("#site_search").keyup(function(event){
-    event.preventDefault();
-    displaySearchResults();
-  });
   
   sortBy.change(function(){
     localStorage.setItem('sorting', sortBy.val());
@@ -70,16 +65,17 @@ jQuery(function() {
 
   //Search page display
   function displaySearchResults() {
-    var query = $("#search_box").val();
+    var query = $("#search-input").val();
     var results = window.idx.search(query);
     var $searchResults = $("#search_results");
+    var $searchHead = $("#search_head");
 
 
     window.data.then(function(loadedData) {
 
       if (results.length) {
         $searchResults.empty();
-        $searchResults.prepend('<p class="">Found '+results.length+' result(s)</p><hr>');
+        $searchHead.append('<p class="search-page__subtitle">Displaying '+results.length+' results for "'+query+'"</p>');
 
         if (localStorage.getItem('sorting') === 'date'){
           results.forEach(function(result) {
@@ -92,7 +88,7 @@ jQuery(function() {
 
         results.forEach(function(result) {
           var item = loadedData[result.ref];
-          var appendString = '<a href="'+item.url.trim()+'">'+item.title+'</a><div class="updated">'+item.updated+'</div><p>'+item.excerpt+'</p>';
+          var appendString = '<a href="'+item.url.trim()+'" class="search-page__link">'+item.title+' - '+item.catalog+'</a><p>'+item.updated+' ... '+item.excerpt+'</p>';
 
           $searchResults.append(appendString);
         });
@@ -114,12 +110,12 @@ jQuery(function() {
 
         results.forEach(function(result) {
           var item = loadedData[result.ref];
-          var appendString = '<li><a href="'+item.url.trim()+'" class="search-result-link">'+item.title+'</a></li>';
+          var appendString = '<li class="search-result__item"><a href="'+item.url.trim()+'" class="search-result__link">'+item.title+'<span class="search-result__catalog"> - '+item.catalog+'</span></a></li>';
 
           $searchResults.append(appendString);
         });
       } else if (query.length > 0) {
-        $searchResults.html('<li>Your search did not match any documents.</li>');
+        $searchResults.html('<li class="search-result__item">Your search did not match any documents.</li>');
       } else {
         $searchResults.empty();
       }

@@ -29,11 +29,13 @@ layout: default
     </div>
 
     <p class="article-date">Updated: {{page.date}}</p>
-
-    <div class="article-nav">
-      <button class="article-nav__btn prev">Previous</button>
-      <button class="article-nav__btn next">Next</button>
-    </div>
+    
+    {% if page.categories contains 'installation' %}
+      <div class="article-nav">
+        <button class="article-nav__btn prev">Previous</button>
+        <button class="article-nav__btn next">Next</button>
+      </div>
+    {% endif %}
 
     <div class="share-overlay">
       <div class="share-block">

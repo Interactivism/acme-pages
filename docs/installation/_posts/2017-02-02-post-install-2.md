@@ -2,6 +2,7 @@
 title: Post install 2
 categories:
   - capacity
+  - step 1
 date: 2017-02-02 00:00:00
 ---
 
