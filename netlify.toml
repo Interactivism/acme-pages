@@ -1,5 +1,5 @@
 # Global settings applied to the whole site.
 [build]
-  base    = "docs"
-  publish = "_site"
+  base    = "/docs"
+  publish = "/docs/_site"
   command = "bundle exec jekyll build"
