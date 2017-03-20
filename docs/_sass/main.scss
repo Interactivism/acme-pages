@@ -143,3 +143,9 @@
     line-height: 18px;
   }
 }
+
+@media screen and (max-width: $mobile-width) {
+  .main-block {
+    float: none;
+  }
+}

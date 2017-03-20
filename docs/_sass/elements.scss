@@ -71,3 +71,20 @@ input:focus {
     flex: 1;
   }
 }
+
+.mobile {
+  display: none !important;
+}
+
+@media screen and (max-width: $mobile-width) {
+  body {
+    background-color: #fff;
+  }
+  .desktop {
+    display: none !important;
+  }
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
