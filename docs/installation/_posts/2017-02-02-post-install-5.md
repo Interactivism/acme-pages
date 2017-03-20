@@ -1,7 +1,7 @@
 ---
-title: Post install 2
+title: Post install 5
 categories:
-  - step 1
+  - step 2
 date: 2017-02-02 00:00:00
 ---
 

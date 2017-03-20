@@ -32,8 +32,8 @@ layout: default
     
     {% if page.categories contains 'installation' %}
       <div class="article-nav">
-        <button class="article-nav__btn prev">Previous</button>
-        <button class="article-nav__btn next">Next</button>
+        <a class="article-nav__link prev" href="#">Previous</a>
+        <a class="article-nav__link next" href="#">Next</a>
       </div>
     {% endif %}
 
@@ -44,7 +44,7 @@ layout: default
           <h3 class="share-form__title">Share article</h3>
           <p class="share-form__text">Copy url</p>
           <div>
-            <input type="text" class="share-form__url">
+            <input type="text" class="share-form__url" readonly>
             <button class="share-form__copy">Copy</button>
           </div>
           <p class="share-form__separator">OR</p>

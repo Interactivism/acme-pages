@@ -4,12 +4,11 @@
       <h3 class="sidebar-title">Installation Guide</h3>
       <ul class="sidebar-accordion">
         {% for submenu in site.data.installation-guide-sidebar %}
-          {% assign name = submenu.name %}
-          <li class="submenu {% if page.categories contains name %}opened{% endif %}">
-            <a href="#" class="submenu__title">{{ name }}</a>
+          <li class="submenu {% if page.title == submenu.name %}opened{% endif %}">
+            <a href="../{{submenu.name | downcase | split: ' ' | join: '-'}}" class="submenu__title {% if page.title == submenu.name %}active{% endif %}">{{ submenu.name }} {% if submenu.description %} <p> {{submenu.description}} </p> {% endif %}</a>
             <ul>
-              {% for post in site.categories[name] %}
-                <li class="submenu__tag {% if page.title == post.title %}active{% endif %} "><a href="../../articles/{{post.title | downcase | split: ' ' | join: '-'}}.html">{{post.title}}</a></li>
+              {% for post in submenu.articles %}
+                <li class="submenu__tag {% if page.title == post %}active{% endif %} "><a href="../../articles/{{post | downcase | split: ' ' | join: '-'}}.html">{{post}}</a></li>
               {% endfor %}
             </ul>
           </li>
@@ -27,10 +26,10 @@
             {% endif %}
           {% endfor %}
           <li class="submenu {% if opened %}opened{% endif %}">
-            <a href="#" class="submenu__title">{{ submenu.name }}</a>
+            <a href="#" class="submenu__title accordion">{{ submenu.name }}</a>
             <ul>
               {% for keyword in submenu.keywords %}
-                <li class="submenu__tag {% if page.title == keyword %}active{% endif %} "><a href="../{{keyword}}/">{{keyword}}</a></li>
+                <li class="submenu__tag {% if page.title == keyword %}active{% endif %} "><a href="../{{keyword | downcase | split: ' ' | join: '-'}}/">{{keyword}}</a></li>
               {% endfor %}
             </ul>
           </li>
@@ -48,10 +47,10 @@
             {% endif %}
           {% endfor %}
           <li class="submenu {% if opened %}opened{% endif %}">
-            <a href="#" class="submenu__title">{{ submenu.name }}</a>
+            <a href="#" class="submenu__title accordion">{{ submenu.name }}</a>
             <ul>
               {% for keyword in submenu.keywords %}
-                <li class="submenu__tag {% if page.title == keyword %}active{% endif %} "><a href="../{{keyword}}/">{{keyword}}</a></li>
+                <li class="submenu__tag {% if page.title == keyword %}active{% endif %} "><a href="../{{keyword | downcase | split: ' ' | join: '-'}}/">{{keyword}}</a></li>
               {% endfor %}
             </ul>
           </li>
@@ -60,9 +59,14 @@
       {% break %}
     {% elsif post.categories contains 'release' %}
       <h3 class="sidebar-title">Release Notes</h3>
+      <ul>
+        {% for post in site.categories.release %}
+          <li class="submenu__tag"><a href="../../articles/{{post.title | downcase | split: ' ' | join: '-'}}.html">{{post.title}}</a></li>
+        {% endfor %}
+      </ul>
       {% break %}
     {% endif %}
   {% endfor %}
   
-  {% include sidebar-footer.html %}
+  {% include footer-sidebar.html %}
 </aside>

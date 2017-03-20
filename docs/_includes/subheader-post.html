@@ -17,9 +17,9 @@
       <li class="nav-item guides-menu">
         <a href="#" class="guides-link {% if page.categories contains 'admin' or page.categories contains 'user' or page.categories contains 'installation' %} active {% endif %}">Guides</a>
         <ul class="guides-list">
-          <li class="guides-item"><a href="../category/admin/">Admin Guide</a></li>
-          <li class="guides-item"><a href="../category/user/">User Guide</a></li>
-          <li class="guides-item"><a href="../category/installation/">Installation Guide</a></li>
+          <li class="guides-item"><a href="../category/admin/" {% if page.categories contains 'admin' %} class="current" {% endif %}>Admin Guide</a></li>
+          <li class="guides-item"><a href="../category/user/" {% if page.categories contains 'user' %} class="current" {% endif %}>User Guide</a></li>
+          <li class="guides-item"><a href="../category/installation/" {% if page.categories contains 'installation' %} class="current" {% endif %}>Installation Guide</a></li>
         </ul>
       </li>
       <li class="nav-item"><a href="../category/release/" class="release-notes-link {% if page.categories contains 'release' %} active {% endif %}">Release notes</a></li>
@@ -29,6 +29,7 @@
       <div class="search-shadow">
         <input type="text" name="query" id="search-input" class="search-input" placeholder="FIND ANSWERS" autocomplete="off">
         <ul id="results-container" class="search-result"></ul>
+        <span class="search-input-clear"></span>
         <button class="search-btn" type="submit">Search</button>
       </div>
     </form>

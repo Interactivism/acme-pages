@@ -158,7 +158,8 @@
 }
 
 .article-nav {
-  &__btn {
+  &__link {
+    display: inline-block;
     padding-left: 20px;
     padding-right: 20px;
     background-color: #eeeff4;

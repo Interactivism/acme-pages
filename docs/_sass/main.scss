@@ -76,6 +76,7 @@
   &__head {
     border-bottom: 2px solid #e4e5ee;
     padding-bottom: 10px;
+    @include clearfix;
   }
 
   &__content {

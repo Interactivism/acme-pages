@@ -18,11 +18,6 @@
     </ul>
   </div>
 </header>
-
-  
-    
-    
-
 <section class="subheader">
   <div class="container">
     <ul class="nav-menu">
@@ -40,17 +35,17 @@
         </a>
       </li>
       <li class="nav-item guides-menu">
-        <a href="#" class="guides-link  active ">Guides</a>
+        <a href="#" class="guides-link ">Guides</a>
         <ul class="guides-list">
-          <li class="guides-item"><a href="../admin/"  class="current" >Admin Guide</a></li>
-          <li class="guides-item"><a href="../user/" >User Guide</a></li>
-          <li class="guides-item"><a href="../installation/" >Installation Guide</a></li>
+          <li class="guides-item"><a href="../category/admin/" >Admin Guide</a></li>
+          <li class="guides-item"><a href="../category/user/" >User Guide</a></li>
+          <li class="guides-item"><a href="../category/installation/" >Installation Guide</a></li>
         </ul>
       </li>
-      <li class="nav-item"><a href="../release/" class="release-notes-link ">Release notes</a></li>
+      <li class="nav-item"><a href="../category/release/" class="release-notes-link  active ">Release notes</a></li>
     </ul>
     <a href="https://support.metacloud.com/hc/en-us" class="support-link" target="_blank">Open a ticket</a>
-    <form id="search-container" class="search-block" role="search" action="../../search.html">
+    <form id="search-container" class="search-block" role="search" action="../search.html">
       <div class="search-shadow">
         <input type="text" name="query" id="search-input" class="search-input" placeholder="FIND ANSWERS" autocomplete="off">
         <ul id="results-container" class="search-result"></ul>
@@ -64,61 +59,16 @@
 <div class="container container-article">
   <aside class="sidebar">
   
-    
-      <h3 class="sidebar-title">Administration Guide</h3>
-      <ul class="sidebar-accordion">
-        
-          
-          
-          <li class="submenu ">
-            <a href="#" class="submenu__title">Admin1</a>
-            <ul>
-              
-                <li class="submenu__tag  "><a href="../application/">application</a></li>
-              
-                <li class="submenu__tag  "><a href="../architecture/">architecture</a></li>
-              
-            </ul>
-          </li>
-        
-          
-          
-          <li class="submenu ">
-            <a href="#" class="submenu__title">Admin2</a>
-            <ul>
-              
-                <li class="submenu__tag  "><a href="../metrics/">metrics</a></li>
-              
-                <li class="submenu__tag  "><a href="../orchestration/">orchestration</a></li>
-              
-            </ul>
-          </li>
-        
-          
-          
-          <li class="submenu ">
-            <a href="#" class="submenu__title">Admin3</a>
-            <ul>
-              
-                <li class="submenu__tag  "><a href="../build/">build</a></li>
-              
-            </ul>
-          </li>
-        
-          
-          
-          <li class="submenu ">
-            <a href="#" class="submenu__title">Admin4</a>
-            <ul>
-              
-                <li class="submenu__tag  "><a href="../quotas/">quotas</a></li>
-              
-            </ul>
-          </li>
-        
-      </ul>
+    <h3 class="sidebar-title">Release Notes</h3>
+    <ul>
       
+        <li class="submenu__tag active"><a href="post-release-2.html">Post release 2</a></li>
+      
+        <li class="submenu__tag "><a href="post-release-1.html">Post release 1</a></li>
+      
+    </ul>
   
+ 
   <div class="sidebar-footer">
   <ul class="sidebar-links">
     <li class="sidebar-links__item">
@@ -170,12 +120,60 @@
 </div>
 </aside>
   
-    <div class="guide-main">
-      <img src="/images/logo.png" alt="logo" class="guide-main__logo">
-      <h1 class="guide-main__title">Acme admin guide</h1>
-      <p class="guide-main__descr">This guide provides guidance for administrating Acme. Praesent commodo cursus magna, vel scelerisque nisl consectetur et.</p>
+  <div class="article-block">
+    <div class="article-affordance">
+      <button class="article-affordance__btn share">
+        <svg width="20" height="19" viewBox="0 0 20 19" xmlns="http://www.w3.org/2000/svg"><path d="M19.767 15.943h.007v2.113H0v-2.113h.007v-5.06H2.12v5.06h15.534v-5.06h2.113v5.06zm-10.779-3.36L8.953 2.72 5.798 5.872l-1.11-1.145L9.088.3c.391-.394 1.032-.401 1.428-.014l4.517 4.424-1.198 1.127-3.243-3.259v10.005H8.988z" fill="#CCCFDB"/></svg>
+      </button>
+      <span class="article-affordance__line"></span>
+      <button class="article-affordance__btn close"></button>
     </div>
-  
+
+    <h1 class="article-title">Post release 2</h1>
+
+    <div class="article-contents">
+      <p class="article-contents__title">Contents</p>
+      <ul class="article-contents__list"></ul>
+    </div>
+    
+    <div class="article-main-content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem consequatur vel, tempore dolor, aperiam perspiciatis quibusdam neque necessitatibus, assumenda optio iste corrupti doloribus blanditiis eligendi expedita, sequi cumque molestias? Dolorem.</p>
+
+    </div>
+
+    <p class="article-date">Updated: 2017-02-02 02:00:00 +0200</p>
+    
+    
+
+    <div class="share-overlay">
+      <div class="share-block">
+        <div class="share-form">
+          <button class="share-form__close share-close"></button>
+          <h3 class="share-form__title">Share article</h3>
+          <p class="share-form__text">Copy url</p>
+          <div>
+            <input type="text" class="share-form__url" readonly>
+            <button class="share-form__copy">Copy</button>
+          </div>
+          <p class="share-form__separator">OR</p>
+          <p class="share-form__text">Share by email</p>
+          <input type="text" class="share-form__email" placeholder="RECIPIENT EMAIL, SEPARATE BY COMMA">
+          <textarea class="share-form__message" placeholder="MESSAGE OPTIONAL"></textarea>
+          <div class="share-form__actions">
+            <button class="share-form__btn cancel share-close">Cancel</button>
+            <button class="share-form__btn send" disabled>Send</button>
+          </div>
+        </div>
+        <div class="share-success">
+          <div class="share-success__check share-close">
+            <svg width="32" height="25" viewBox="0 0 32 25" xmlns="http://www.w3.org/2000/svg"><path d="M27 0L12 14.999l-7-7-5 5 12 12 20-20z" fill="#FFF"/></svg>
+          </div>
+          <h3 class="share-success__title">Success</h3>
+          <p class="share-success__text">Your message has been sent.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 		<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
 		<script type="text/javascript" src="/js/lunr.min.js"></script>

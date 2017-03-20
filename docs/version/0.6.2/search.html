@@ -1,3 +1,23 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="/css/screen.css">
+		<script type="text/javascript" src="/js/version.js"></script>
+	</head>
+	<body>
+		<header class="header">
+  <div class="container">
+    <a href="/" class="header-logo">
+      <img src="/images/logo.png" alt="logo image" />
+    </a>
+    <h1 class="header-title">Acme Documentation</h1>
+    <ul class="versions-list closed">
+    </ul>
+  </div>
+</header>
 <section class="subheader">
   <div class="container">
     <ul class="nav-menu">
@@ -27,7 +47,7 @@
     <a href="https://support.metacloud.com/hc/en-us" class="support-link" target="_blank">Open a ticket</a>
     <form id="search-container" class="search-block" role="search" action="search.html">
       <div class="search-shadow">
-        <input type="text" name="query" id="search-input" class="search-input" placeholder="FIND ANSWERS" autocomplete="off">
+        <input type="text" name="query" id="search-input" class="search-input" placeholder="FIND ANSWERS" autocomplete="off" />
         <ul id="results-container" class="search-result"></ul>
         <span class="search-input-clear"></span>
         <button class="search-btn" type="submit">Search</button>
@@ -35,3 +55,29 @@
     </form>
   </div>
 </section>
+
+<div id="home-search" class="container">
+  <div class="search-page">
+    <div class="search-page__content">
+      <div class="search-page__head" id="search_head">
+        <div class="search-page__select">
+          Sort by
+          <select name="sort-by" id="sort-by">
+            <option value="relevance">Relevance</option>
+            <option value="date">Date</option>
+          </select>
+        </div>
+      </div>
+      <div id="search_results" class="search-page__body">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+		<script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="/js/lunr.min.js"></script>
+		<script type="text/javascript" src="/js/search.js"></script>
+		<script type="text/javascript" src="/js/main.js"></script>
+	</body>
+</html>

@@ -1,3 +1,16 @@
+{% for post in site.categories[page.title] %}
+  {% if post.categories contains 'admin' %}
+    {% assign catalog = 'admin' %}
+    {% break %}
+  {% elsif post.categories contains 'user' %}
+    {% assign catalog = 'user' %}
+    {% break %}
+  {% elsif post.categories contains 'installation' %}
+    {% assign catalog = 'installation' %}
+    {% break %}
+  {% endif %}
+{% endfor %}
+
 <section class="subheader">
   <div class="container">
     <ul class="nav-menu">
@@ -17,9 +30,9 @@
       <li class="nav-item guides-menu">
         <a href="#" class="guides-link {% if page.title != 'release' %} active {% endif %}">Guides</a>
         <ul class="guides-list">
-          <li class="guides-item"><a href="../admin/">Admin Guide</a></li>
-          <li class="guides-item"><a href="../user/">User Guide</a></li>
-          <li class="guides-item"><a href="../installation/">Installation Guide</a></li>
+          <li class="guides-item"><a href="../admin/" {% if catalog == 'admin' %} class="current" {% endif %}>Admin Guide</a></li>
+          <li class="guides-item"><a href="../user/" {% if catalog == 'user' %} class="current" {% endif %}>User Guide</a></li>
+          <li class="guides-item"><a href="../installation/" {% if catalog == 'installation' %} class="current" {% endif %}>Installation Guide</a></li>
         </ul>
       </li>
       <li class="nav-item"><a href="../release/" class="release-notes-link {% if page.title == 'release' %} active {% endif %}">Release notes</a></li>
@@ -29,6 +42,7 @@
       <div class="search-shadow">
         <input type="text" name="query" id="search-input" class="search-input" placeholder="FIND ANSWERS" autocomplete="off">
         <ul id="results-container" class="search-result"></ul>
+        <span class="search-input-clear"></span>
         <button class="search-btn" type="submit">Search</button>
       </div>
     </form>
