@@ -48,13 +48,14 @@
   }
   &__item {
     padding-left: 10px;
+    color: #5b6269;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 24px;
+    text-transform: uppercase;
     a {
       display: inline-block;
       color: #5b6269;
-      font-size: 11px;
-      font-weight: 700;
-      line-height: 24px;
-      text-transform: uppercase;
       transition: color 0.3s;
       &:hover {
         color: #fff;

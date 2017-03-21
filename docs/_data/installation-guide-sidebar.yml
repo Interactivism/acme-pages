@@ -1,16 +1,24 @@
-- name: step 1
+- article: step 1
   description: Cabling Compute Servers to the Nexus 93180 Switches
-  articles:
+  subarticles:
     - Post install 1
     - Post install 2
     - Post install 3
-- name: step 2
+- article: step 2
   description: Cabling for Remote Console (Out-of-Band) Connectivity
-  articles:
+  subarticles:
     - Post install 4
     - Post install 5
-- name: step 3
+- article: step 3
   description: Cabling for Remote Console (Out-of-Band) Connectivity
-  articles:
+  subarticles:
     - Post install 6
     - Post install 7
+- article: step 4
+  description: Cabling for Remote Console (Out-of-Band) Connectivity
+  subarticles:
+    - Post install 8
+- article: step 5
+  description: Cabling for Remote Console (Out-of-Band) Connectivity
+  subarticles:
+    - Post install 9

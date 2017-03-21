@@ -35,7 +35,12 @@ jQuery(function() {
     this.field('category');
   });
 
-  window.data = $.getJSON('/search.json');
+  if (pageVersion) {   
+    window.data = $.getJSON('/version/'+pageVersion+'/search.json');
+  } else {
+    window.data = $.getJSON('/search.json');
+  }
+
   window.data.then(function(loadedData){
     $.each(loadedData, function(index, value){
       window.idx.add(

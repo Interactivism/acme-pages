@@ -1,14 +1,9 @@
-- name: Admin1
+- name: Concepts
   keywords:
     - application
     - architecture
-- name: Admin2
+    - capacity
+- name: Tools
   keywords:
-    - metrics
-    - orchestration
-- name: Admin3
-  keywords:
-    - build
-- name: Admin4
-  keywords:
+    - logs
     - quotas

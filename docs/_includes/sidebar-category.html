@@ -3,12 +3,12 @@
     {% if post.categories contains 'installation' %}
       <h3 class="sidebar-title">Installation Guide</h3>
       <ul class="sidebar-accordion">
-        {% for submenu in site.data.installation-guide-sidebar %}
-          <li class="submenu {% if page.title == submenu.name %}opened{% endif %}">
-            <a href="../{{submenu.name | downcase | split: ' ' | join: '-'}}" class="submenu__title {% if page.title == submenu.name %}active{% endif %}">{{ submenu.name }} {% if submenu.description %} <p> {{submenu.description}} </p> {% endif %}</a>
+        {% for menu in site.data.installation-guide-sidebar %}
+          <li class="submenu">
+            <a href="../../articles/{{menu.article | downcase | split: ' ' | join: '-'}}.html" class="submenu__title">{{ menu.article }} {% if menu.description %} <p> {{menu.description}} </p> {% endif %}</a>
             <ul>
-              {% for post in submenu.articles %}
-                <li class="submenu__tag {% if page.title == post %}active{% endif %} "><a href="../../articles/{{post | downcase | split: ' ' | join: '-'}}.html">{{post}}</a></li>
+              {% for post in menu.subarticles %}
+                <li class="submenu__tag"><a href="../../articles/{{post | downcase | split: ' ' | join: '-'}}.html">{{post}}</a></li>
               {% endfor %}
             </ul>
           </li>

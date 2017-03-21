@@ -17,23 +17,85 @@ layout: default
       <button class="article-affordance__btn close"></button>
     </div>
 
-    <h1 class="article-title">{{page.title}}</h1>
+    {% if page.categories contains 'installation' %}
+      {% for menu in site.data.installation-guide-sidebar %}
+        {% if menu.subarticles contains page.title %}
+          <h1 class="article-title">{{menu.article}} - {{page.title}}</h1>
+          {% break %}
+        {% endif %}
+        {% if forloop.last %}
+          <h1 class="article-title">{{page.title}}</h1>
+        {% endif %}
+      {% endfor %}
+    {% else %}
+      <h1 class="article-title">{{page.title}}</h1>
+    {% endif %}
 
-    <div class="article-contents">
-      <p class="article-contents__title">Contents</p>
-      <ul class="article-contents__list"></ul>
-    </div>
+    {% if page.categories contains 'installation' %}
+      {% for menu in site.data.installation-guide-sidebar %}
+        {% if menu.subarticles contains page.title %}
+          <div class="article-contents">
+            <p class="article-contents__title">Contents</p>
+            <ul class="article-contents__list"></ul>
+          </div>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
     
     <div class="article-main-content">
       {{content}}
     </div>
 
-    <p class="article-date">Updated: {{page.date}}</p>
-    
+    <p class="article-date">Updated: {{page.date | date: '%B %e, %Y' }}</p>
+
     {% if page.categories contains 'installation' %}
       <div class="article-nav">
-        <a class="article-nav__link prev" href="#">Previous</a>
-        <a class="article-nav__link next" href="#">Next</a>
+        {% for menu in site.data.installation-guide-sidebar %}
+          {% if menu.article == page.title %}
+            {% if menu.subarticles %}
+                {% assign next = menu.subarticles.first %}
+                <a class="article-nav__link next" href="{{next | downcase | split: ' ' | join: '-'}}.html">Next</a>
+            {% endif %}
+            {% unless forloop.first %}
+                {% assign prev = forloop.index0 | minus: 1 %}
+                <a class="article-nav__link prev" href="{{site.data.installation-guide-sidebar[prev].subarticles.last  | downcase | split: ' ' | join: '-'}}.html">Previous</a>
+            {% endunless %}
+            {% break %}
+          {% elsif menu.subarticles contains page.title %}
+            {% assign next_menu = forloop.index0 | plus: 1 %}
+            {% assign prev_menu = forloop.index0 | minus: 1 %}
+            {% for post in menu.subarticles %}
+              {% if post == page.title %}
+                {% if forloop.last and forloop.first %}
+                  <a class="article-nav__link prev" href="{{menu.article | downcase | split: ' ' | join: '-'}}.html">Previous</a>
+                  {% if site.data.installation-guide-sidebar[next_menu] %}
+                    <a class="article-nav__link next" href="{{site.data.installation-guide-sidebar[next_menu].article  | downcase | split: ' ' | join: '-'}}.html">Next</a>
+                  {% endif %}
+                  {% break %}
+                {% elsif forloop.first %}
+                  <a class="article-nav__link prev" href="{{menu.article | downcase | split: ' ' | join: '-'}}.html">Previous</a>
+                  {% assign next_page = forloop.index0 | plus: 1 %}
+                  <a class="article-nav__link next" href="{{menu.subarticles[next_page]  | downcase | split: ' ' | join: '-'}}.html">Next</a>
+                  {% break %}
+                {% elsif forloop.last %}
+                  {% assign prev_page = forloop.index0 | minus: 1 %}
+                  <a class="article-nav__link prev" href="{{menu.subarticles[prev_page] | downcase | split: ' ' | join: '-'}}.html">Previous</a>
+                  {% if site.data.installation-guide-sidebar[next_menu] %}
+                    <a class="article-nav__link next" href="{{site.data.installation-guide-sidebar[next_menu].article  | downcase | split: ' ' | join: '-'}}.html">Next</a>
+                  {% endif %}
+                  {% break %}
+                {% else %}
+                  {% assign prev_page = forloop.index0 | minus: 1 %}
+                  {% assign next_page = forloop.index0 | plus: 1 %}
+                  <a class="article-nav__link prev" href="{{menu.subarticles[prev_page] | downcase | split: ' ' | join: '-'}}.html">Previous</a>
+                  <a class="article-nav__link next" href="{{menu.subarticles[next_page] | downcase | split: ' ' | join: '-'}}.html">Next</a>
+                  {% break %}
+                {% endif %}
+              {% endif %}
+            {% endfor %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
       </div>
     {% endif %}
 
@@ -54,7 +116,6 @@ layout: default
           <div class="share-form__actions">
             <button class="share-form__btn cancel share-close">Cancel</button>
             <button class="share-form__btn send" disabled>Send</button>
-            <div class="sharethis-inline-share-buttons"></div>
           </div>
         </div>
         <div class="share-success">

@@ -149,6 +149,38 @@
       }
     }
   }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    word-wrap:break-word;
+    color: #526476;
+    font-size: 12px;
+    vertical-align: middle;
+    thead tr:first-child {
+      height: 31px;
+      background-color: #e2e3ec;
+      color: #7a8183;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    tr {
+      height: 42px;
+      border-top: 1px solid #dadde8;
+      &:nth-child(even) {
+        background-color: #f9fafc;
+      }
+      &:nth-child(odd) {
+        background-color: #f3f3f7;
+      }
+    }
+    
+    td, th {
+      padding: 7px 18px;
+      text-align: left;
+    }
+  }
 }
 
 .article-date {

@@ -1,13 +1,7 @@
-- name: User1
+- name: Storage
   keywords:
-    - application
-    - architecture
     - build
-    - capacity
     - configure
-- name: User2
+- name: Compute
   keywords:
-    - metrics
-    - orchestration
-    - quotas
-    - security
+    - tickets

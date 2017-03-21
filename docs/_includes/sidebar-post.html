@@ -2,11 +2,11 @@
   {% if page.categories contains 'installation' %}
     <h3 class="sidebar-title">Installation Guide</h3>
     <ul class="sidebar-accordion">
-      {% for submenu in site.data.installation-guide-sidebar %}
-        <li class="submenu {% if page.categories contains submenu.name %}opened{% endif %}">
-          <a href="../category/{{submenu.name | downcase | split: ' ' | join: '-'}}" class="submenu__title">{{ submenu.name }} {% if submenu.description %} <p> {{submenu.description}} </p> {% endif %} </a>
+      {% for menu in site.data.installation-guide-sidebar %}
+        <li class="submenu {% if page.title == menu.article or menu.subarticles contains page.title %}opened{% endif %}">
+          <a href="{{menu.article | downcase | split: ' ' | join: '-'}}" class="submenu__title {% if page.title == menu.article %}active{% endif %} ">{{ menu.article }} {% if menu.description %} <p> {{menu.description}} </p> {% endif %} </a>
           <ul>
-            {% for post in submenu.articles %}
+            {% for post in menu.subarticles %}
               <li class="submenu__tag {% if page.title == post %}active{% endif %} "><a href="{{post | downcase | split: ' ' | join: '-'}}.html">{{post}}</a></li>
             {% endfor %}
           </ul>

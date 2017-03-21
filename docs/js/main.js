@@ -4,15 +4,24 @@ layout: null
 
 $(function(){
 
+  $('.header-logo').on('click', function(e) {
+    localStorage.setItem('version', '');
+  });
+
   var docVersions = '{{ site.data.versions |  join: ","}}';
   docVersions = docVersions.split(',');
   var listVersions = '';
 
+  $('.versions-list').html('');
+
   for (i=0; i<docVersions.length; i++) {
-    listVersions += '<li class="versions-list__item"><a href="/version/'+docVersions[i]+'/">Version '+docVersions[i]+'</a></li>'
+    if (pageVersion == docVersions[i]) {
+      $('.versions-list').prepend('<li class="versions-list__item">Version '+docVersions[i]+'</li>');
+    } else {
+      listVersions += '<li class="versions-list__item"><a href="/version/'+docVersions[i]+'/">Version '+docVersions[i]+'</a></li>';
+    }
   }
 
-  $('.versions-list').html('');
   $('.versions-list').append(listVersions);
 
   $('.search-input-clear').on('click', function(e) {
@@ -29,8 +38,20 @@ $(function(){
 
   $('.article-contents__list').append(articleContents);
 
+  $(window).on('click', function() {
+    $('.versions-list').addClass('closed');
+    $('.nav-item.guides-menu').removeClass('opened');
+  });
+
   $('.versions-list').on('click', function(e) {
+    e.stopPropagation();
     $(this).toggleClass('closed');
+  });
+
+  $('.guides-link').on('click', function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    $(this).parent().toggleClass('opened');
   });
 
   $('.submenu__title.accordion').on('click', function(e) {
@@ -63,7 +84,18 @@ $(function(){
   });
 
   $('.share-form__btn.send').on('click', function() {
-    $('.share-block').addClass('success');
+    sendMail();
+  });
+
+  $('.share-form__email').keyup(function() {
+    var recepient = $('.share-form__email').val();
+    var mailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var res = mailReg.test(recepient);
+    if (res) {
+      $('.share-form__btn.send').prop('disabled', false);
+    } else {
+      $('.share-form__btn.send').prop('disabled', true);
+    }
   });
 
   $('.share-close').on('click', function() {
@@ -71,8 +103,10 @@ $(function(){
     $('.share-block').removeClass('success');
   });
 
-  $('.guides-link').on('click', function(e) {
-    e.preventDefault();
-    $(this).parent().toggleClass('opened');
-  });
+  function sendMail() {
+    var recepient = $('.share-form__email').val();
+    var message = $('.share-form__message').val();
+    var pageUrl = $('.share-form__url').val();
+    window.open('mailto:'+recepient+'?body='+pageUrl+' '+message);
+  }
 });
