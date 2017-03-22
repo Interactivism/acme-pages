@@ -147,5 +147,35 @@
 @media screen and (max-width: $mobile-width) {
   .main-block {
     float: none;
+    padding: 20px 0;
+  }
+  
+  .catalogs-mobile__link {
+    display: block;
+    max-width: 335px;
+    margin: 0 auto 20px;
+    background-color: #c8cbd8;
+    border-radius: 5px;
+    color: #5b6269;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .featured-block {
+    width: 100%;
+  }
+
+  .featured-menu__item:before {
+    content: '';
+    display: inline-block;
+    height: 6px;
+    width: 6px;
+    margin-right: 12px;
+    margin-bottom: 2px;
+    background-color: #526476;
+    border-radius: 50%;
   }
 }

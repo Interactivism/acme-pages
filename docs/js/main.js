@@ -4,25 +4,32 @@ layout: null
 
 $(function(){
 
-  $('.header-logo').on('click', function(e) {
-    localStorage.setItem('version', '');
-  });
-
   var docVersions = '{{ site.data.versions |  join: ","}}';
   docVersions = docVersions.split(',');
+  lastVersion = docVersions.shift();
   var listVersions = '';
 
   $('.versions-list').html('');
 
   for (i=0; i<docVersions.length; i++) {
-    if (pageVersion == docVersions[i]) {
-      $('.versions-list').prepend('<li class="versions-list__item">Version '+docVersions[i]+'</li>');
+    if (pageVersion && pageVersion == docVersions[i]) {
+      $('.versions-dropdown').prepend('Version '+pageVersion);
     } else {
       listVersions += '<li class="versions-list__item"><a href="/version/'+docVersions[i]+'/">Version '+docVersions[i]+'</a></li>';
     }
   }
 
+  if (pageVersion) {
+    $('.versions-list').prepend('<li class="versions-list__item last-version"><a href="/">Version '+lastVersion+'</a></li>');
+  } else {
+    $('.versions-dropdown').prepend('Version '+lastVersion);
+  }
+
   $('.versions-list').append(listVersions);
+
+  $('.versions-list__item.last-version').on('click', function(e) {
+    localStorage.removeItem('version');
+  });
 
   $('.search-input-clear').on('click', function(e) {
     e.preventDefault();
@@ -39,13 +46,13 @@ $(function(){
   $('.article-contents__list').append(articleContents);
 
   $(window).on('click', function() {
-    $('.versions-list').addClass('closed');
+    $('.versions-dropdown').removeClass('opened');
     $('.nav-item.guides-menu').removeClass('opened');
   });
 
-  $('.versions-list').on('click', function(e) {
+  $('.versions-dropdown').on('click', function(e) {
     e.stopPropagation();
-    $(this).toggleClass('closed');
+    $(this).toggleClass('opened');
   });
 
   $('.guides-link').on('click', function(e) {

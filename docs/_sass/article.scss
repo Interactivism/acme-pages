@@ -144,7 +144,7 @@
         content: counter(item) ". ";
         counter-increment: item;
         margin-left: -20px;
-        margin-right: 14px;
+        margin-right: 5px;
         color: #415163;
       }
     }
@@ -243,8 +243,9 @@
   position: absolute;
   left: 50%;
   top: 58px;
-  height: 540px;
-  width: 624px;
+  min-height: 540px;
+  max-width: 624px;
+  width: 100%;
   padding: 25px 24px 31px;
   background-color: #edeef3;
   border-radius: 5px;
@@ -300,7 +301,7 @@
   }
 
   &__url {
-    width: 500px;
+    width: 87%;
     border: solid 1px #c8cbd8;
     margin-right: -4px;
     padding: 0 13px;
@@ -312,7 +313,7 @@
   }
 
   &__copy {
-    width: 76px;
+    width: 13%;
     background-color: #c8cbd8;
     border-bottom-right-radius: 5px;
     border-top-right-radius: 5px;
@@ -329,21 +330,23 @@
   }
 
   &__separator {
+    position: relative;
     margin: 40px 0;
     color: #526476;
+    text-align: center;
     &:before, &:after {
       content: '';
-      display: inline-block;
+      position: absolute;
+      top: 45%;
       height: 1px;
-      width: 46%;
-      margin-bottom: 4px;
+      width: 43%;
       background-color: #c8cbd8;
     }
     &:before {
-      margin-right: 2%;
+      left: 0;
     }
     &:after {
-      margin-left: 2%;
+      right: 0;
     }
   }
 
@@ -367,10 +370,11 @@
   }
 
   &__actions {
-    text-align: right;
+    @include clearfix;
   }
 
   &__btn {
+    float: right;
     width: 154px;
     border-radius: 5px;
     cursor: pointer;
@@ -417,5 +421,60 @@
   }
   &__text {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .article-block {
+    margin-left: 0;
+    padding: 35px 0;
+  }
+  .article-affordance {
+    right: 0;
+    top: 0;
+  }
+  .article-contents {
+    float: none;
+    max-width: 300px;
+    margin: 20px auto;
+  }
+  .share-overlay {
+    position: fixed;
+  }
+  .share-block {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    padding: 25px 16px;
+    background-color: #e2e3ec;
+    border-radius: 0px;
+    box-shadow: none;
+  }
+  .share-form {
+    &__btn {
+      float: none;
+      display: block;
+      width: 100%;
+      &.cancel {
+        margin-right: 0;
+        margin-top: 30px;
+        background-color: transparent;
+        color: #20a9db;
+        line-height: 1;
+        text-transform: none;
+      }
+    }
+    &__title {
+      font-size: 20px;
+    }
+    &__url {
+      width: 78%;
+    }
+    &__copy {
+      width: 22%;
+    }
+    &__separator {
+      margin: 20px 0;
+    }
   }
 }

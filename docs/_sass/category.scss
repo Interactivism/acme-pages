@@ -63,3 +63,13 @@
     line-height: 18px;
   }
 }
+
+@media screen and (max-width: $mobile-width) {
+  .category-block {
+    margin-left: 0;
+    padding: 0;
+    &__head {
+      border-bottom: none;
+    }
+  }
+}

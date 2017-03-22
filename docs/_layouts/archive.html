@@ -36,7 +36,7 @@ layout: default
       <div class="category-block__content">
         <div class="category-block__head">
           <h2 class="category-block__title">{{page.title | capitalize}}</h2>
-          <p class="category-block__subtitle">Showing <span class="category-block__amount">{{site.categories[page.title] | size}}</span> Results for "{{page.title | capitalize}}"</p>
+          <p class="category-block__subtitle desktop">Showing <span class="category-block__amount">{{site.categories[page.title] | size}}</span> Results for "{{page.title | capitalize}}"</p>
         </div>
         <div class="category-block__body">
           {% for post in page.posts %}

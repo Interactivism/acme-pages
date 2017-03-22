@@ -22,44 +22,85 @@
   line-height: 100px;
 }
 
-.versions-list {
-  position: absolute;
-  right: 57px;
-  top: 38px;
+.versions-dropdown {
+  position: relative;
+  float: right;
   width: 150px;
-  background-color: #c8cbd8;
+  margin-right: 7px;
+  margin-top: 38px;
+  padding-left: 10px;
+  background-color: #aaadb8;
   border-radius: 5px;
-  overflow: hidden;
-  z-index: 100;
+  color: #5b6269;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
   &:after {
     content: '';
     position: absolute;
     top: 10px;
     right: 10px;
-    border-bottom: 4px solid #5b6269;
+    border-top: 4px solid #5b6269;
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
   }
-  &.closed {
-    height: 24px;
+  &.opened {
     &:after {
       transform: rotate(180deg);
     }
-  }
-  &__item {
-    padding-left: 10px;
-    color: #5b6269;
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 24px;
-    text-transform: uppercase;
-    a {
-      display: inline-block;
-      color: #5b6269;
-      transition: color 0.3s;
-      &:hover {
-        color: #fff;
-      }
+    .versions-list {
+      display: block;
     }
+  }
+}
+
+.versions-list {
+  display: none;
+  position: absolute;
+  right: 0px;
+  top: 36px;
+  width: 155px;
+  background-color: #474c51;
+  border-radius: 5px;
+  z-index: 100;
+  &:after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    border-bottom: 8px solid #474c51;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+  }
+  &__item a {
+    display: block;
+    padding-left: 15px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 35px;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    &:hover {
+      background-color: #6d757d;
+    }
+  }
+}
+
+.versions-list__item:first-child a {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.versions-list__item:last-child a {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+@media screen and (max-width: $mobile-width) {
+  .header-title {
+    line-height: 54px;
   }
 }
