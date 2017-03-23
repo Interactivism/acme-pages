@@ -66,6 +66,11 @@ $(function(){
     $(this).parent().toggleClass('opened');
   });
 
+  $('.mobile-nav-menu__link.accordion').on('click', function(e) {
+    e.preventDefault();
+    $(this).toggleClass('opened');
+  });
+
   $('.search-input').focusin(function() {
     $(this).parent().addClass('active');
   });
@@ -116,4 +121,16 @@ $(function(){
     var pageUrl = $('.share-form__url').val();
     window.open('mailto:'+recepient+'?body='+pageUrl+' '+message);
   }
+
+  $('.menu-state-link').on('click', function(e) {
+    e.preventDefault();
+    var state = $(this).attr('data-state');
+    $('.mobile-nav').removeClass('opened');
+    $('.'+state+'-menu').addClass('opened');
+  });
+
+  $('.mobile-nav-close').on('click', function(e) {
+    e.preventDefault();
+    $(this).closest('.mobile-nav').removeClass('opened');
+  });
 });

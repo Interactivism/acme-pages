@@ -1,0 +1,33 @@
+<div class="mobile-nav mobile admin-menu">
+  {% include header-mobile-nav.html %}
+  
+  <ul class="mobile-nav-menu">
+    <li class="mobile-nav-menu__item">
+      <a href="#" class="mobile-nav-menu__link menu-state-link" data-state="main">
+        <svg width="13px" height="13px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>global-arrow-left</title>
+            <g id="Interactivism-Documentation-Project-2017-03-01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="23" transform="translate(-535.000000, -684.000000)" fill="#6b737c">
+                    <g id="Dropdown-Variant-Default" transform="translate(515.000000, 672.000000)">
+                        <polygon id="global-arrow-left" transform="translate(24.225000, 18.500000) scale(-1, 1) translate(-24.225000, -18.500000) " points="21.95 25 20 23.0491055 24.55 18.5008132 20 13.9492681 21.95 12 28.45 18.5008132"></polygon>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        Admin guide
+      </a>
+    </li>
+    {% for submenu in site.data.admin-guide-sidebar %}
+      <li class="mobile-nav-menu__item">
+        <a href="#" class="mobile-nav-menu__link accordion">{{ submenu.name }}</a>
+        <ul>
+          {% for keyword in submenu.keywords %}
+            <li class="mobile-nav-menu__tag {% if page.categories contains keyword %}active{% endif %} "><a href="/category/{{keyword | downcase | split: ' ' | join: '-'}}/">{{keyword}}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+    {% endfor %}
+  </ul>
+
+  {% include footer-mobile-nav.html %}
+</div>

@@ -244,9 +244,8 @@
 }
 
 .support-link {
-  position: relative;
   float: right;
-  padding-left: 45px;
+  padding-left: 20px;
   padding-right: 20px;
   border-radius: 5px;
   background-color: #7a8183;
@@ -254,22 +253,9 @@
   font-size: 13px;
   font-weight: 700;
   line-height: 37px;
+  text-align: center;
   text-transform: uppercase;
-  &:before, &:after {
-    content: '';
-    position: absolute;
-    background-color: #89ba17;
-  }
-  &:before {
-    top: 12px;
-    left: 25px;
-    width: 3px;
-    height: 13px;
-  }
-  &:after {
-    top: 17px;
-    left: 20px;
-    width: 13px;
-    height: 3px;
+  svg {
+    margin-right: 10px;
   }
 }

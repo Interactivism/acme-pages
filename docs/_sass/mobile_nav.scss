@@ -1,0 +1,145 @@
+.mobile-nav {
+  position: fixed;
+  right: -335px;
+  top: 0;
+  height: 100%;
+  max-width: 333px;
+  width: 89%;
+  padding: 30px 20px;
+  background-color: #474c51;
+  overflow: scroll;
+  transition: right 0.5s;
+
+  &.opened {
+    right: 0;
+  }
+
+  &__header {
+    position: relative;
+  }
+
+  &-close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+  }
+
+  &-search {
+    position: relative;
+    margin-top: 40px;
+    &__input {
+      display: block;
+      width: 100%;
+      border: 1px solid #c8cbd8;
+      padding-left: 13px;
+      padding-right: 44px;
+      border-radius: 5px;
+      font-family: $main-font;
+      font-size: 14px;
+      line-height: 40px;
+    }
+    &__btn {
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 44px;
+      width: 44px;
+      padding: 14px;
+      background-color: transparent;
+    }
+  }
+
+  &__support {
+    display: block;
+    border-radius: 5px;
+    background-color: #7a8183;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 44px;
+    text-align: center;
+    text-transform: uppercase;
+    svg {
+      margin-right: 12px;
+    }
+  }
+
+  &__footer {
+    margin-top: 100px;
+    color: #959596;
+    font-size: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    img {
+      display: inline-block;
+      width: 60px;
+      opacity: 0.3;
+    }
+  }
+}
+
+.mobile-nav-menu {
+  margin-bottom: 40px;
+  margin-top: 30px;
+  border-top: 1px solid #5b6269;
+
+  a {
+    position: relative;
+    display: block;
+    padding-left: 30px;
+    border-bottom: 1px solid #5b6269;
+    color: #b4b5bc;
+    font-size: 16px;
+    line-height: 44px;
+    text-transform: capitalize;
+    &.active {
+      color: #20a9db;
+      .mobile-nav-menu__icon {
+        fill: currentColor;
+      }
+    }
+  }
+
+  .accordion {
+    &:after {
+      content: '';
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      height: 7px;
+      width: 7px;
+      border-right: 2px solid #7e858e;
+      border-bottom: 2px solid #7e858e;
+      margin-top: -8px;
+      transform: rotate(45deg);
+      transition: transform 0.3s;
+    }
+    &.opened:after {
+      transform: rotate(-135deg);
+    }
+    &.opened + ul {
+      max-height: 5000px;
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    ul {
+      max-height: 0;
+      transition: max-height 0.3s;
+    }
+  }
+
+  &__icon {
+    fill: #7e858e;
+  }
+
+  .mobile-nav-menu__link {
+    color: #fff;
+    svg {
+      margin-left: -29px;
+      margin-right: 12px
+    }
+  }
+}

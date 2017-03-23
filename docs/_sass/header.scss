@@ -46,6 +46,16 @@
     border-left: 4px solid transparent;
     border-right: 4px solid transparent;
   }
+  &--mobile {
+    float: none;
+    display: inline-block;
+    margin: 0;
+    background-color: #7a8183;
+    color: #fff;
+    &:after {
+      border-top-color: #fff;
+    }
+  }
   &.opened {
     &:after {
       transform: rotate(180deg);
@@ -87,6 +97,12 @@
       background-color: #6d757d;
     }
   }
+  &--mobile {
+    background-color: #7a8183;
+    &:after {
+      border-bottom-color: #7a8183;
+    }
+  }
 }
 
 .versions-list__item:first-child a {
@@ -102,5 +118,9 @@
 @media screen and (max-width: $mobile-width) {
   .header-title {
     line-height: 54px;
+  }
+  .header-burger {
+    float: right;
+    margin-top: 18px;
   }
 }

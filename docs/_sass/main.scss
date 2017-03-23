@@ -178,4 +178,15 @@
     background-color: #526476;
     border-radius: 50%;
   }
+
+  .search-page {
+    padding: 0;
+    &__select {
+      float: left;
+      margin-bottom: 10px;
+    }
+    &__subtitle {
+      clear: both;
+    }
+  }
 }
