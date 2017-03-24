@@ -12,7 +12,7 @@ layout: default
         <div class="search-page__select">
           Sort by
           <select name="sort-by" id="sort-by">
-            <option value="relevance">Relevance</option>
+            <option value="relevance" selected>Relevance</option>
             <option value="date">Date</option>
           </select>
         </div>
