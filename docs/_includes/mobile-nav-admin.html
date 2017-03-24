@@ -19,10 +19,20 @@
     </li>
     {% for submenu in site.data.admin-guide-sidebar %}
       <li class="mobile-nav-menu__item">
-        <a href="#" class="mobile-nav-menu__link accordion">{{ submenu.name }}</a>
+        <a href="#" class="mobile-nav-menu__link accordion" data-subcategory="{{ submenu.name }}">
+          <svg width="13px" height="8px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="caret-off">
+              <title>global-caret-off</title>
+              <g id="Interactivism-Documentation-Project-2017-03-01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="23" transform="translate(-289.000000, -412.000000)" fill="#8F989F">
+                      <path d="M294,415.919497 L290.572308,412.519819 L290.048205,412 L289,413.039639 L289.524103,413.559458 L292.951795,416.959136 L292.950559,416.960361 L293.998765,418 L294,417.998775 L294.001235,418 L295.049441,416.960361 L295.048205,416.959136 L298.475897,413.559458 L299,413.039639 L297.951795,412 L297.427692,412.519819 L294,415.919497 Z" id="global-caret-off"></path>
+                  </g>
+              </g>
+          </svg>
+          {{ submenu.name }}
+        </a>
         <ul>
           {% for keyword in submenu.keywords %}
-            <li class="mobile-nav-menu__tag {% if page.categories contains keyword %}active{% endif %} "><a href="/category/{{keyword | downcase | split: ' ' | join: '-'}}/">{{keyword}}</a></li>
+            <li class="mobile-nav-menu__tag"><a href="/category/{{keyword | downcase | split: ' ' | join: '-'}}/">{{keyword}}</a></li>
           {% endfor %}
         </ul>
       </li>

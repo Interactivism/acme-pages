@@ -72,4 +72,17 @@
       border-bottom: none;
     }
   }
+
+  .page-breadcrumbs {
+    margin-top: 20px;
+    color: #85929e;
+    font-size: 12px;
+    text-transform: capitalize;
+    a {
+      color: #85929e;
+    }
+    svg {
+      margin: 0 5px;
+    }
+  }
 }

@@ -3,7 +3,7 @@
   
   <ul class="mobile-nav-menu">
     <li class="mobile-nav-menu__item {% if opened %}opened{% endif %}">
-      <a href="/" class="mobile-nav-menu__link">
+      <a href="/" class="mobile-nav-menu__link {% if page.path == 'index.html' %}active{% endif %}">
         <svg width="13px" height="12px" viewBox="0 0 14 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <title>icon-global-home</title>
           <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -16,7 +16,15 @@
       </a>
     </li>
     <li class="mobile-nav-menu__item {% if opened %}opened{% endif %}">
-      <a href="#" class="mobile-nav-menu__link accordion">
+      <a href="#" class="mobile-nav-menu__link accordion {% unless page.categories contains 'release' or page.path == 'index.html' or page.path == 'search.md' %} active {% endunless %}">
+        <svg width="13px" height="8px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="caret-off">
+            <title>global-caret-off</title>
+            <g id="Interactivism-Documentation-Project-2017-03-01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="23" transform="translate(-289.000000, -412.000000)" fill="#8F989F">
+                    <path d="M294,415.919497 L290.572308,412.519819 L290.048205,412 L289,413.039639 L289.524103,413.559458 L292.951795,416.959136 L292.950559,416.960361 L293.998765,418 L294,417.998775 L294.001235,418 L295.049441,416.960361 L295.048205,416.959136 L298.475897,413.559458 L299,413.039639 L297.951795,412 L297.427692,412.519819 L294,415.919497 Z" id="global-caret-off"></path>
+                </g>
+            </g>
+        </svg>
         <svg width="13px" height="13px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <title>Support-Icon</title>
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -30,13 +38,35 @@
         Guides
       </a>
       <ul>
-        <li class="mobile-nav-menu__tag menu-state-link" data-state="user"><a href="#">User guide</a></li>
-        <li class="mobile-nav-menu__tag menu-state-link" data-state="admin"><a href="#">Admin guide</a></li>
-        <li class="mobile-nav-menu__tag menu-state-link" data-state="installation"><a href="#">Installation guide</a></li>
+        <li class="mobile-nav-menu__tag"><a href="#" class=" menu-state-link" data-state="user">User guide</a></li>
+        <li class="mobile-nav-menu__tag"><a href="#" class=" menu-state-link" data-state="admin">Admin guide</a></li>
+        <li class="mobile-nav-menu__tag"><a href="#" class=" menu-state-link" data-state="installation">Installation guide</a></li>
       </ul>
     </li>
     <li class="mobile-nav-menu__item">
-      <a href="#" class="mobile-nav-menu__link accordion">Release notes</a>
+      <a href="#" class="mobile-nav-menu__link accordion {% if page.categories contains 'release' %} active {% endif %}">
+        <svg width="13px" height="13px" viewBox="0 0 11 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>global-document</title>
+            <g id="Mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="4-User-Guide-Tap" transform="translate(-66.000000, -402.000000)" fill-rule="nonzero" class="mobile-nav-menu__icon">
+                    <g id="Filter-Menu" transform="translate(42.000000, 0.000000)">
+                        <g id="Menu-Item" transform="translate(0.000000, 386.000000)">
+                            <path d="M24,16.5355145 C24,16.239758 24.2379475,16 24.5313456,16 L31.7030466,16 C31.8497905,16 32.0530039,16.0849619 32.1565906,16.1894191 L34.4371594,18.4891523 C34.5409009,18.5937656 34.625,18.7985375 34.625,18.9466579 L34.625,30.4641303 C34.625,30.760083 34.386923,31 34.0935589,31 L24.5314411,31 C24.2379343,31 24,30.7602167 24,30.4644856 L24,16.5355145 Z M25.0807617,17.1075265 L25.0807617,29.9794224 L33.5504639,29.9794224 L33.5504639,20.2857143 L30.9062444,20.2857143 C30.7596626,20.2857143 30.640625,20.1657759 30.640625,20.0178244 L30.640625,17.1075265 L25.0807617,17.1075265 Z M31.7296875,17.0634766 L31.7296875,19.1963937 L33.5625,19.2142857 L31.7296875,17.0634766 Z M28.4359375,22.2144509 C28.4359375,22.0664263 28.5550463,21.9464286 28.7015761,21.9464286 L32.2609239,21.9464286 C32.4076321,21.9464286 32.5265625,22.0661158 32.5265625,22.2144509 L32.5265625,22.6159062 C32.5265625,22.7639309 32.4074537,22.8839286 32.2609239,22.8839286 L28.7015761,22.8839286 C28.5548679,22.8839286 28.4359375,22.7642413 28.4359375,22.6159062 L28.4359375,22.2144509 Z M26.125,24.9465938 C26.125,24.7985691 26.243859,24.6785714 26.3908095,24.6785714 L32.2341905,24.6785714 C32.380993,24.6785714 32.5,24.7982587 32.5,24.9465938 L32.5,25.3480491 C32.5,25.4960737 32.381141,25.6160714 32.2341905,25.6160714 L26.3908095,25.6160714 C26.244007,25.6160714 26.125,25.4963842 26.125,25.3480491 L26.125,24.9465938 Z M26.125,27.6519509 C26.125,27.5039263 26.243859,27.3839286 26.3908095,27.3839286 L32.2341905,27.3839286 C32.380993,27.3839286 32.5,27.5036158 32.5,27.6519509 L32.5,28.0534062 C32.5,28.2014309 32.381141,28.3214286 32.2341905,28.3214286 L26.3908095,28.3214286 C26.244007,28.3214286 26.125,28.2017413 26.125,28.0534062 L26.125,27.6519509 Z" id="global-document"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <svg width="13px" height="8px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="caret-off">
+            <title>global-caret-off</title>
+            <g id="Interactivism-Documentation-Project-2017-03-01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="23" transform="translate(-289.000000, -412.000000)" fill="#8F989F">
+                    <path d="M294,415.919497 L290.572308,412.519819 L290.048205,412 L289,413.039639 L289.524103,413.559458 L292.951795,416.959136 L292.950559,416.960361 L293.998765,418 L294,417.998775 L294.001235,418 L295.049441,416.960361 L295.048205,416.959136 L298.475897,413.559458 L299,413.039639 L297.951795,412 L297.427692,412.519819 L294,415.919497 Z" id="global-caret-off"></path>
+                </g>
+            </g>
+        </svg>
+        Release notes
+      </a>
       <ul>
         {% for post in site.categories.release %}
           <li class="mobile-nav-menu__tag"><a href="/articles/{{post.title | downcase | split: ' ' | join: '-'}}.html">{{post.title}}</a></li>

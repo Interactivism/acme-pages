@@ -37,14 +37,10 @@
   font-weight: 700;
   line-height: 24px;
   text-transform: uppercase;
-  &:after {
-    content: '';
+  svg {
     position: absolute;
     top: 10px;
     right: 10px;
-    border-top: 4px solid #5b6269;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
   }
   &--mobile {
     float: none;
@@ -52,12 +48,9 @@
     margin: 0;
     background-color: #7a8183;
     color: #fff;
-    &:after {
-      border-top-color: #fff;
-    }
   }
   &.opened {
-    &:after {
+    svg {
       transform: rotate(180deg);
     }
     .versions-list {

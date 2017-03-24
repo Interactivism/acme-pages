@@ -59,7 +59,7 @@
       {% break %}
     {% elsif post.categories contains 'release' %}
       <h3 class="sidebar-title">Release Notes</h3>
-      <ul>
+      <ul class="sidebar-release">
         {% for post in site.categories.release %}
           <li class="submenu__tag"><a href="../../articles/{{post.title | downcase | split: ' ' | join: '-'}}.html">{{post.title}}</a></li>
         {% endfor %}

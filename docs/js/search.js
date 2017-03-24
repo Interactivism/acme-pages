@@ -73,14 +73,14 @@ jQuery(function() {
     var query = $("#search-input").val();
     var results = window.idx.search(query);
     var $searchResults = $("#search_results");
-    var $searchHead = $("#search_head");
+    var $searchAmount = $("#search_head .search-page__subtitle");
 
 
     window.data.then(function(loadedData) {
 
       if (results.length) {
         $searchResults.empty();
-        $searchHead.append('<p class="search-page__subtitle">Displaying '+results.length+' results for "'+query+'"</p>');
+        $searchAmount.html('Displaying '+results.length+' results for "'+query);
 
         if (localStorage.getItem('sorting') === 'date'){
           results.forEach(function(result) {

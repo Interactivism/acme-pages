@@ -20,8 +20,10 @@ $(function(){
   }
 
   if (pageVersion) {
+    $('.version-number').append(pageVersion);
     $('.versions-list').prepend('<li class="versions-list__item last-version"><a href="/">Version '+lastVersion+'</a></li>');
   } else {
+    $('.version-number').append(lastVersion);
     $('.versions-dropdown').prepend('Version '+lastVersion);
   }
 
@@ -125,12 +127,21 @@ $(function(){
   $('.menu-state-link').on('click', function(e) {
     e.preventDefault();
     var state = $(this).attr('data-state');
+    var submenu = $(this).attr('data-submenu');
     $('.mobile-nav').removeClass('opened');
+    if (submenu) {
+      $('.mobile-nav-menu').find('[data-subcategory="' + submenu + '"]').addClass('opened');
+    }
     $('.'+state+'-menu').addClass('opened');
   });
 
   $('.mobile-nav-close').on('click', function(e) {
     e.preventDefault();
     $(this).closest('.mobile-nav').removeClass('opened');
+    $('.mobile-nav-menu__link.accordion').removeClass('opened');
+  });
+
+  $('.article-block table').each(function(e) {
+    $(this).wrap('<div class="table-wrap"></div>');
   });
 });

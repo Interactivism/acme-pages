@@ -16,6 +16,7 @@ layout: default
             <option value="date">Date</option>
           </select>
         </div>
+        <p class="search-page__subtitle"></p>
       </div>
       <div id="search_results" class="search-page__body">
         

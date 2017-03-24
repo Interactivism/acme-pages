@@ -149,9 +149,12 @@
       }
     }
   }
+
+  .table-wrap {
+    overflow: scroll;
+  }
   
   table {
-    width: 100%;
     border-collapse: collapse;
     word-wrap:break-word;
     color: #526476;

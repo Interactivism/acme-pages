@@ -55,4 +55,12 @@ To connect routers and switches:
 2. Connect the two 1G interfaces from each ASR1001-X Series router slot GE0 and GE1 to ports 47 and 48 of each corresponding Nexus 93180YC-EX switch.
 3. Connect the two 1G interfaces from each ASR1001-X Series router slot GE0 and GE1 to ports 47 and 48 of each corresponding Nexus 93180YC-EX switch.
 
+| FROM | TO    | CABLE   | QUANTITY |
+|------|-------|---------|----------|
+| ISR  | Nexus | EIA-232 | 2        |
+| ISR  | Nexus | EIA-232 | 2        |
+| ISR  | Nexus | EIA-232 | 2        |
+| ISR  | Nexus | EIA-232 | 2        |
+| ISR  | Nexus | EIA-232 | 2        |
+
 **Note: The Acme ASR1001-X Services router comes with two 10G ports, the 2.5G license does not enable these ports and they will be inactive until an appropriate license is purchased.**

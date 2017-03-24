@@ -32,6 +32,70 @@ layout: default
       <p class="guide-main__descr">This section includes release notes for all Acme releases.</p>
     </div>
   {% else %}
+    <p class="page-breadcrumbs mobile">
+      {% for post in site.categories[page.title] %}
+        {% if post.categories contains 'admin' %}
+          <a href="#" class="menu-state-link" data-state="admin">Admin guide</a>
+          <svg width="7px" height="11px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>global-arrow-right</title>
+              <g id="Interactivism-Documentation-Project-2017-03-01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="23" transform="translate(-1087.000000, -684.000000)" fill="#c8cbd8">
+                      <g id="Dropdown-Variant-Default" transform="translate(1021.000000, 672.000000)">
+                          <polygon id="global-arrow-right" points="67.95 25 66 23.0491055 70.55 18.5008132 66 13.9492681 67.95 12 74.45 18.5008132"></polygon>
+                      </g>
+                  </g>
+              </g>
+          </svg>
+          {% for elem in site.data.admin-guide-sidebar %}
+            {% if elem.keywords contains page.title %}
+              <a href="#" class="menu-state-link" data-state="admin" data-submenu="{{elem.name}}">{{elem.name}}</a>
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          <svg width="7px" height="11px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>global-arrow-right</title>
+              <g id="Interactivism-Documentation-Project-2017-03-01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="23" transform="translate(-1087.000000, -684.000000)" fill="#c8cbd8">
+                      <g id="Dropdown-Variant-Default" transform="translate(1021.000000, 672.000000)">
+                          <polygon id="global-arrow-right" points="67.95 25 66 23.0491055 70.55 18.5008132 66 13.9492681 67.95 12 74.45 18.5008132"></polygon>
+                      </g>
+                  </g>
+              </g>
+          </svg>
+          <span>{{page.title}}</span>
+        {% endif %}
+        {% if post.categories contains 'user' %}
+          <a href="#" class="menu-state-link" data-state="user">User guide</a>
+          <svg width="7px" height="11px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>global-arrow-right</title>
+              <g id="Interactivism-Documentation-Project-2017-03-01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="23" transform="translate(-1087.000000, -684.000000)" fill="#c8cbd8">
+                      <g id="Dropdown-Variant-Default" transform="translate(1021.000000, 672.000000)">
+                          <polygon id="global-arrow-right" points="67.95 25 66 23.0491055 70.55 18.5008132 66 13.9492681 67.95 12 74.45 18.5008132"></polygon>
+                      </g>
+                  </g>
+              </g>
+          </svg>
+          {% for elem in site.data.user-guide-sidebar %}
+            {% if elem.keywords contains page.title %}
+              <a href="#" class="menu-state-link" data-state="user" data-submenu="{{elem.name}}">{{elem.name}}</a>
+              {% break %}
+            {% endif %}
+          {% endfor %}
+          <svg width="7px" height="11px" viewBox="0 0 9 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <title>global-arrow-right</title>
+              <g id="Interactivism-Documentation-Project-2017-03-01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                  <g id="23" transform="translate(-1087.000000, -684.000000)" fill="#c8cbd8">
+                      <g id="Dropdown-Variant-Default" transform="translate(1021.000000, 672.000000)">
+                          <polygon id="global-arrow-right" points="67.95 25 66 23.0491055 70.55 18.5008132 66 13.9492681 67.95 12 74.45 18.5008132"></polygon>
+                      </g>
+                  </g>
+              </g>
+          </svg>
+          <span>{{page.title}}</span>
+        {% endif %}
+      {% endfor %}
+    </p>
     <div class="category-block">
       <div class="category-block__content">
         <div class="category-block__head">
