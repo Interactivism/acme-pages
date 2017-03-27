@@ -427,6 +427,12 @@
   }
 }
 
+@media screen and (max-width: 1190px) {
+  .share-block {
+    box-shadow: none;
+  }
+}
+
 @media screen and (max-width: $mobile-width) {
   .article-block {
     margin-left: 0;
@@ -451,7 +457,6 @@
     padding: 25px 16px;
     background-color: #e2e3ec;
     border-radius: 0px;
-    box-shadow: none;
   }
   .share-form {
     &__btn {

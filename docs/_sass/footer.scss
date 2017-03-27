@@ -37,6 +37,112 @@
   }
 }
 
+.contact-overlay {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 200;
+}
+
+.contact-block {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  max-width: 624px;
+  width: 100%;
+  padding: 25px 24px 31px;
+  background-color: #edeef3;
+  border-radius: 5px;
+  box-shadow: 16px 16px 0 0 rgba(0,0,0,0.2); 
+  transform: translate(-50%, -50%);
+}
+
+.contact-form {
+  color: #34495e;
+  &__close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    cursor: pointer;
+    &:before, &:after {
+      content: '';
+      display: inline-block;
+      height: 15px;
+      width: 3px;
+      background-color: #b5bcc6;
+    }
+
+    &:before {
+      margin-right: -3px;
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 24px;
+    text-transform: capitalize;
+  }
+
+  &__name, &__message {
+    display: block;
+    width: 100%;
+    border: 1px solid #c8cbd8;
+    border-radius: 5px;
+  }
+
+  &__name {
+    padding: 0 13px;
+    line-height: 35px;
+  }
+
+  &__message {
+    height: 120px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    padding: 15px 13px;
+  }
+
+  &__actions {
+    @include clearfix;
+  }
+
+  &__btn {
+    float: right;
+    width: 154px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 37px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 0.3s;
+    &.send {
+      background-color: #7a8183;
+      color: #fff;
+      &:hover {
+        background-color: #999fa5;
+      }
+    }
+    &.cancel {
+      margin-right: 12px;
+      background-color: #adb5ba;
+      color: #5b6269;
+    }
+  }
+}
+
 @media screen and (max-width: $mobile-width) {
   .footer {
     padding-bottom: 29px;
@@ -58,6 +164,27 @@
     clear: both;
     margin-top: 30px;
     color: #c8cbd8;
+  }
+  .contact-block {
+    box-shadow: none; 
+  }
+  .contact-form {
+    &__btn {
+      float: none;
+      display: block;
+      width: 100%;
+      &.cancel {
+        margin-right: 0;
+        margin-top: 30px;
+        background-color: transparent;
+        color: #20a9db;
+        line-height: 1;
+        text-transform: none;
+      }
+    }
+    &__title {
+      font-size: 20px;
+    }
   }
 }
 

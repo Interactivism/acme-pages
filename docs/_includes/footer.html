@@ -16,8 +16,22 @@
         </a>
       </li>
       <li class="footer-links__item"><a href="#">Legal Information</a></li>
-      <li class="footer-links__item"><a href="#">Contact Us</a></li>
+      <li class="footer-links__item contact-popup-btn"><a href="#">Contact Us</a></li>
     </ul>
     <p class="copyright">&copy; 2017 Acme and/or its Affiliates. All rights reserved.</p>
   </div>
 </footer>
+<div class="contact-overlay">
+  <div class="contact-block">
+    <div class="contact-form">
+      <button class="contact-form__close contact-close"></button>
+      <h3 class="contact-form__title">Contact us</h3>
+      <input type="text" class="contact-form__name" placeholder="NAME">
+      <textarea class="contact-form__message" placeholder="MESSAGE"></textarea>
+      <div class="contact-form__actions">
+        <button class="contact-form__btn send">Send</button>
+        <button class="contact-form__btn cancel contact-close">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -64,7 +64,20 @@
   }
 }
 
+@media screen and (max-width: 1190px) {
+  .guide-main {
+    padding: 50px;
+  }
+  .category-block {
+    padding: 30px 20px;
+  }
+}
+
 @media screen and (max-width: $mobile-width) {
+  .guide-main {
+    margin-left: 0;
+  }
+
   .category-block {
     margin-left: 0;
     padding: 0;

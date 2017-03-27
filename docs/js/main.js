@@ -81,15 +81,15 @@ $(function(){
     $(this).parent().removeClass('active');
   });
 
-  $('.article-affordance__btn.share').on('click', function() {
-    $('.share-form__url').val(location.href);
-    $('.share-overlay').css('display', 'block');
-  });
-
   $('.article-affordance__btn.close').on('click', function() {
     if(document.referrer.split('/')[2]===location.hostname){
       window.history.back();
     }
+  });
+
+  $('.article-affordance__btn.share').on('click', function() {
+    $('.share-form__url').val(location.href);
+    $('.share-overlay').css('display', 'block');
   });
 
   $('.share-form__copy').on('click', function() {
@@ -122,6 +122,25 @@ $(function(){
     var message = $('.share-form__message').val();
     var pageUrl = $('.share-form__url').val();
     window.open('mailto:'+recepient+'?body='+pageUrl+' '+message);
+  }
+
+  $('.contact-popup-btn').on('click', function(e) {
+    e.preventDefault();
+    $('.contact-overlay').css('display', 'block');
+  });
+
+  $('.contact-form__btn.send').on('click', function() {
+    sendContactMail();
+  });
+
+  $('.contact-close').on('click', function() {
+    $('.contact-overlay').css('display', 'none');
+  });
+
+  function sendContactMail() {
+    var sender = $('.contact-form__name').val();
+    var message = $('.contact-form__message').val();
+    window.open('mailto:mail@example.com?body='+message+' from: '+sender);
   }
 
   $('.menu-state-link').on('click', function(e) {
