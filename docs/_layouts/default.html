@@ -6,7 +6,9 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>ACME documentation</title>
 		<link rel="stylesheet" href="{{ site.baseurl }}/css/screen.css">
-		<script type="text/javascript" src="{{ site.baseurl }}/js/version.js"></script>
+		{% if page.url != "/404.html" %}
+			<script type="text/javascript" src="{{ site.baseurl }}/js/version.js"></script>
+    {% endif %}
 	</head>
 	<body>
 		{{ content }}

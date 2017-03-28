@@ -21,10 +21,10 @@ jQuery(function() {
   var sortBy = $('#sort-by');
 
   if(!localStorage.getItem('sorting')){
-    localStorage.setItem('sorting', sortBy.val());
+    localStorage.setItem('sorting', sortBy.html());
   } else {
     var sorting = localStorage.getItem('sorting');
-    sortBy.val(sorting);
+    sortBy.html(sorting);
   }
 
   window.idx = lunr(function () {
@@ -56,8 +56,10 @@ jQuery(function() {
     });
   }
   
-  sortBy.change(function(){
-    localStorage.setItem('sorting', sortBy.val());
+  $('.sort-list__item a').on('click', function(e){
+    e.preventDefault();
+    localStorage.setItem('sorting', $(this).text());
+    sortBy.html($(this).text());
     displaySearchResults();
   });
 
@@ -98,6 +100,7 @@ jQuery(function() {
           $searchResults.append(appendString);
         });
       } else {
+        $searchAmount.html('Displaying 0 results for "'+query);
         $searchResults.html('<p>Your search did not match any documents.</p><p>Make sure that all words are spelled correctly or try more general keywords.</p>');
       }
     });

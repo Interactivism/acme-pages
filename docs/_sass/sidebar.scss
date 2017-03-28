@@ -63,12 +63,8 @@
       display: block;
       font-size: 13px;
       text-transform: none;
-      transition: color 0.3s;
       &:first-letter {
         text-transform: uppercase;
-      }
-      &:hover {
-        color: #526476;
       }
     }
     &.active {
@@ -115,6 +111,12 @@
       border-bottom-left-radius: 5px;
       color: #526476;
       font-size: 13px;
+      &:hover {
+        color: #526476;
+      }
+    }
+    &:hover {
+      color: #85929e;;
     }
   }
 }
@@ -129,11 +131,19 @@
     color: #aaadb8;
     font-size: 13px;
     text-transform: uppercase;
+    transition: all 0.3s;
+    &:hover {
+      color: #80878E;
+    }
   }
   svg {
     margin-bottom: -3px;
     margin-right: 33px;
   }
+}
+
+.sidebar-links__icon {
+  fill: currentColor;
 }
 
 .sidebar-copyright {

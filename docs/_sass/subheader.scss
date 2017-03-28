@@ -57,12 +57,15 @@
 
 .guides-menu {
   position: relative;
-  &.opened .guides-list {
-    display: block;
-  }
-  &.opened .guides-link:after {
-    transform: rotate(180deg);
-  }
+  &.opened {
+    background-color: #d2d2d6;
+    .guides-list {
+      display: block;
+    }
+    .guides-link:after {
+      transform: rotate(180deg);
+    }
+  } 
 }
 
 .guides-link:after {
@@ -88,18 +91,9 @@
   background-color: #474c51;
   border-radius: 5px;
   z-index: 150;
-  &:after {
-    content: '';
-    position: absolute;
-    top: -8px;
-    right: 20px;
-    border-bottom: 8px solid #474c51;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-  }
 }
 
-.guides-item a{
+.guides-item a {
   display: block;
   position: relative;
   padding-left: 15px;
@@ -129,6 +123,19 @@
 .guides-item:first-child a {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    border-bottom: 8px solid #474c51;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    transition: all 0.3s;
+  }
+  &:hover:before {
+    border-bottom-color: #6d757d;
+  }
 }
 
 .guides-item:last-child a {
@@ -164,34 +171,27 @@
   &:focus {
     border-bottom-left-radius: 0px;
   }
+  &::-webkit-input-placeholder {
+    color: #C8CBD8;
+  }
+  &::-moz-placeholder {
+    color: #C8CBD8;
+  }
+  &:-ms-input-placeholder {
+    color: #C8CBD8;
+  }
+  &:-moz-placeholder {
+    color: #C8CBD8;
+  }
 }
 
 .search-input-clear {
+  display: none;
   position: absolute;
-  right: 100px;
-  top: 13px;
-  height: 10px;
-  width: 10px;
+  right: 90px;
+  top: 6px;
   background-color: transparent;
   cursor: pointer;
-
-  &:before, &:after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 3px;
-    height: 10px;
-    width: 2px;
-    background-color: #b5bcc6;
-  }
-
-  &:before {
-    transform: rotate(45deg);
-  }
-
-  &:after {
-    transform: rotate(-45deg);
-  }
 }
 
 .search-btn {
@@ -256,8 +256,13 @@
   line-height: 37px;
   text-align: center;
   text-transform: uppercase;
+  transition: all 0.3s;
   svg {
     margin-right: 10px;
+  }
+  &:hover {
+    background-color: #999FA5;
+    color: #fff;
   }
 }
 

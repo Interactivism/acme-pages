@@ -12,7 +12,7 @@ layout: null
         "date"     : "{{ post.date }}",
         "content"  : "{{ post.content | strip_html | strip_newlines | escape | remove: "\" }}",
         "excerpt"  : "{{ post.content | strip_html | strip_newlines | truncatewords: 40 }}",
-        "updated"  : "{{ post.last_modified_at | date: '%b %e, %Y' | escape}}",
+        "updated"  : "{{ post.date | date: '%b %e, %Y' | escape}}",
         "catalog"  : "{% if post.categories contains 'admin' %}Admin Guide{% elsif post.categories contains 'user' %}User Guide{% elsif post.categories contains 'installation' %}Installation Guide{% elsif post.categories contains 'release' %}Release Notes{% endif %}"
 
       } {% unless forloop.last %},{% endunless %}

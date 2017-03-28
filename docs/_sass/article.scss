@@ -5,26 +5,8 @@
 
   &__btn {
     background-color: transparent;
-    width: 20px;
     cursor: pointer;
     transition: opacity 0.3s;
-
-    &.close:before, &.close:after {
-      content: '';
-      display: inline-block;
-      height: 20px;
-      width: 2px;
-      background-color: #CCCFDB;
-    }
-
-    &.close:before {
-      margin-right: -2px;
-      transform: rotate(45deg);
-    }
-
-    &.close:after {
-      transform: rotate(-45deg);
-    }
 
     &:hover {
       opacity: 0.5;
@@ -205,6 +187,10 @@
     font-weight: 700;
     line-height: 37px;
     text-transform: uppercase;
+
+    &:hover {
+      color: #5b6269;
+    }
 
     &.next {
       float: right;

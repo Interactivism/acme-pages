@@ -29,11 +29,15 @@ section, article, aside {
 a {
   color: $link-color;
 	text-decoration: none;
+  transition: all 0.3s;
 	&:active {
     outline: none;
   }
   &:focus {
     outline: none;
+  }
+  &:hover {
+    color: $hover-color;
   }
 }
 

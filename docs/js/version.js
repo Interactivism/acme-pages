@@ -11,6 +11,11 @@ if (location.href.indexOf('version/')>0) {
   localStorage.setItem('version', pageVersion);
 } else if (localStorage.getItem('version')) {
   var storageVersion = localStorage.getItem('version');
-  var redirectUrl = document.location.origin+'/version/'+storageVersion+document.location.pathname;
+  var querySubstr = location.href.indexOf('?');
+  var queryString = '';
+  if (querySubstr > 0) {
+    queryString = location.href.substr(querySubstr);
+  }
+  var redirectUrl = document.location.origin+'/version/'+storageVersion+document.location.pathname+queryString;
   location.href = redirectUrl;
 }
