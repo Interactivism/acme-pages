@@ -133,12 +133,13 @@
   }
 
   .table-wrap {
-    overflow: scroll;
+    overflow: auto;
   }
   
   table {
     border-collapse: collapse;
     word-wrap:break-word;
+    min-width: 100%;
     color: #526476;
     font-size: 12px;
     vertical-align: middle;
@@ -290,6 +291,7 @@
   }
 
   &__url {
+    height: 37px;
     width: 87%;
     border: solid 1px #c8cbd8;
     margin-right: -4px;
@@ -299,9 +301,11 @@
     border-top-left-radius: 5px;
     color: #526476;
     line-height: 35px;
+    vertical-align: top;
   }
 
   &__copy {
+    height: 37px;
     width: 13%;
     background-color: #c8cbd8;
     border-bottom-right-radius: 5px;
@@ -310,9 +314,10 @@
     cursor: pointer;
     font-size: 13px;
     font-weight: 700;
-    line-height: 37px;
+    line-height: 35px;
     text-transform: uppercase;
     transition: all 0.3s;
+    vertical-align: top;
     &:hover {
       background-color: #d3d5e0;
     }

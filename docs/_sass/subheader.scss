@@ -2,6 +2,9 @@
   padding-bottom: 20px;
   padding-top: 20px;
   background-color: #f9fafc;
+  .container {
+    display: flex;
+  }
 }
 
 .nav-menu {
@@ -24,8 +27,8 @@
 
   a {
     display: block;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 17px;
+    padding-right: 17px;
     color: #526476;
     transition: background-color 0.3s;
     &:hover {
@@ -145,13 +148,15 @@
 
 .search-block {
   position: relative;
-  float: right;
+  flex: 1;
+  margin-left: 127px;
   margin-right: 20px;
 }
 
 .search-shadow {
   position: relative;
   border-radius: 5px;
+  font-size: 0;
   transition: box-shadow 0.3s;
   z-index: 100;
   &.active {
@@ -160,14 +165,15 @@
 }
 
 .search-input {
-  width: 410px;
+  height: 37px;
+  width: 82%;
   border: solid 1px #c8cbd8;
-  margin-right: -4px;
   padding: 0 25px 0 13px;
   background-color: #fff;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
   line-height: 35px;
+  vertical-align: top;
   &:focus {
     border-bottom-left-radius: 0px;
   }
@@ -183,19 +189,23 @@
   &:-moz-placeholder {
     color: #C8CBD8;
   }
+  &::-ms-clear {
+    display: none;
+  }
 }
 
 .search-input-clear {
   display: none;
   position: absolute;
-  right: 90px;
+  right: 18%;
   top: 6px;
   background-color: transparent;
   cursor: pointer;
 }
 
 .search-btn {
-  width: 87px;
+  height: 37px;
+  width: 18%;
   background-color: #c8cbd8;
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
@@ -203,9 +213,10 @@
   cursor: pointer;
   font-size: 13px;
   font-weight: 700;
-  line-height: 37px;
+  line-height: 35px;
   text-transform: uppercase;
   transition: all 0.3s;
+  vertical-align: top;
   &:hover {
     background-color: #d3d5e0;
   }
@@ -214,7 +225,7 @@
 .search-result {
   position: absolute;
   left: 0;
-  width: 410px;
+  width: 82%;
   padding: 0 13px;
   background-color: #f9fafc;
   border-bottom-left-radius: 5px;
@@ -266,10 +277,35 @@
   }
 }
 
-@media screen and (max-width: 1190px) {
+@media screen and (max-width: 1280px) {
   .search-block {
-    float: left;
-    margin-right: 0;
-    margin-top: 10px;
+    margin-left: 20px;
+  }
+  .search-input {
+    width: 75%;
+  }
+  .search-btn {
+    width: 25%;
+  }
+  .search-input-clear {
+    right: 25%;
+  }
+  .search-result {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .search-input {
+    width: 67%;
+  }
+  .search-btn {
+    width: 33%;
+  }
+  .search-input-clear {
+    right: 33%;
+  }
+  .search-result {
+    width: 67%;
   }
 }
