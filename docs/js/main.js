@@ -103,41 +103,10 @@ $(function(){
   });
 
   $('.article-affordance__btn.share').on('click', function() {
-    $('.share-form__url').val(location.href);
-    $('.share-overlay').css('display', 'block');
+    var subject = $('#mail-subject').text();
+    var pageUrl = location.href.slice(0, location.href.indexOf('#'));
+    window.open('mailto:?subject='+subject+'&body=Check out this article: '+pageUrl);
   });
-
-  $('.share-form__copy').on('click', function() {
-    document.querySelector('.share-form__url').select();
-    document.execCommand('copy');
-  });
-
-  $('.share-form__btn.send').on('click', function() {
-    sendMail();
-  });
-
-  $('.share-form__email').keyup(function() {
-    var recepient = $('.share-form__email').val();
-    var mailReg = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    var res = mailReg.test(recepient);
-    if (res) {
-      $('.share-form__btn.send').prop('disabled', false);
-    } else {
-      $('.share-form__btn.send').prop('disabled', true);
-    }
-  });
-
-  $('.share-close').on('click', function() {
-    $('.share-overlay').css('display', 'none');
-    $('.share-block').removeClass('success');
-  });
-
-  function sendMail() {
-    var recepient = $('.share-form__email').val();
-    var message = $('.share-form__message').val();
-    var pageUrl = $('.share-form__url').val();
-    window.open('mailto:'+recepient+'?body='+pageUrl+' '+message);
-  }
 
   $('.contact-popup-btn').on('click', function(e) {
     e.preventDefault();
