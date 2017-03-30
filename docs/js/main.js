@@ -104,7 +104,7 @@ $(function(){
 
   $('.article-affordance__btn.share').on('click', function() {
     var subject = $('#mail-subject').text();
-    var pageUrl = location.href.slice(0, location.href.indexOf('#'));
+    var pageUrl = location.href;
     window.open('mailto:?subject='+subject+'&body=Check out this article: '+pageUrl);
   });
 
