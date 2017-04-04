@@ -1,0 +1,7 @@
+- name: Storage
+  keywords:
+    - build
+    - configure
+- name: Compute
+  keywords:
+    - tickets

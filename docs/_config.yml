@@ -2,12 +2,24 @@
 # Site
 
 title: Acme docs
+baseurl: ""
+incremental: true
 
 permalink: /articles/:title
+
+layouts_dir: _layouts
+includes_dir: _includes
+plugins_dir:
+ - _plugins
+
+sass:
+  sass_dir: _sass
+  style: compressed
 
 category_dir: "/"
 category_layout: "/_layouts/archive.html"
 
+markdown: kramdown
 excerpt_separator: <!--more-->
 
 defaults:
@@ -35,6 +47,7 @@ gems:
   - jekyll-archives
   - jekyll-sitemap
   - jekyll-autoprefixer
+  - jekyll-unsanitize
 
 exclude:
   - Gemfile
@@ -43,19 +56,4 @@ exclude:
   - LICENCE
   - node_modules/
 
-# -----------
-# CloudCannon
-_editable_regions:
-  image:
-    url_src: true
-    
-social_icons:
-  - Facebook
-  - Google Plus
-  - Instagram
-  - LinkedIn
-  - Pinterest
-  - Tumblr
-  - Twitter
-  - YouTube
-  - RSS
+include: ['.htaccess']
