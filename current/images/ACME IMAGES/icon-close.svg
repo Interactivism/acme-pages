@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>global-close</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="3.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0.125490196   0 0 0 0 0.662745098   0 0 0 0 0.858823529  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Search-Filter---Input-2-Hover-On" transform="translate(-378.000000, -7.000000)" fill="#B5BCC6">
+            <g id="Search-Filter" filter="url(#filter-1)">
+                <path d="M390.04095,17.4368631 L386.73563,14.131543 L385.14604,15.721133 L388.45136,19.026453 L385,22.4778131 L386.522187,24 L389.973547,20.5486399 L393.26437,23.8394629 L394.85396,22.249873 L391.563137,18.9590499 L395,15.5221869 L393.477813,14 L390.04095,17.4368631 Z" id="global-close"></path>
+            </g>
+        </g>
+    </g>
+</svg>

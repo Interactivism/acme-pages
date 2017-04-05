@@ -1,5 +1,0 @@
-# Global settings applied to the whole site.
-[build]
-  base    = "/docs"
-  publish = "/docs/_site"
-  command = "bundle exec jekyll build --config _config.yml,current.yml"
