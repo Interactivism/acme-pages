@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="13px" height="13px" viewBox="0 0 13 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>button-add</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Nav-Guides-On" transform="translate(-1089.000000, -32.000000)" fill="#89BA17">
+            <g id="ADDITIVE-BUTTON-DEFAULT" transform="translate(1069.000000, 20.000000)">
+                <g id="Group-4" transform="translate(20.000000, 11.000000)">
+                    <path d="M7.86964286,6.12544803 L7.86964286,1 L5.13035714,1 L5.13035714,6.12544803 L0,6.12544803 L0,8.92114695 L5.13035714,8.92114695 L5.13035714,14 L7.86964286,14 L7.86964286,8.92114695 L13,8.92114695 L13,6.12544803 L7.86964286,6.12544803 Z" id="button-add"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
