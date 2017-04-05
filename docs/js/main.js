@@ -1,6 +1,6 @@
 $(function(){
 
-  var docVersions = '2.2.0,2.1.0,2.0.0,1.2.0,0.6.2,0.5.7,0.4.0';
+  var docVersions = '2.0.0,1.2.0,0.6.2,0.5.7,0.4.0';
   docVersions = docVersions.split(',');
   lastVersion = docVersions.shift();
   var listVersions = '';
