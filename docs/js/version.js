@@ -16,6 +16,6 @@ if (location.href.indexOf('version/')>0) {
   if (querySubstr > 0) {
     queryString = location.href.substr(querySubstr);
   }
-  var redirectUrl = document.location.origin+'/version/'+storageVersion+document.location.pathname+queryString;
+  var redirectUrl = document.location.origin+'/acme-pages/version/'+storageVersion+document.location.pathname+queryString;
   location.href = redirectUrl;
 }

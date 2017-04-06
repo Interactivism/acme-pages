@@ -3,7 +3,7 @@
   
   <ul class="mobile-nav-menu">
     <li class="mobile-nav-menu__item {% if opened %}opened{% endif %}">
-      <a href="/" class="mobile-nav-menu__link {% if page.path == 'index.html' %}active{% endif %}">
+      <a href="{{site.baseurl}}" class="mobile-nav-menu__link {% if page.path == 'index.html' %}active{% endif %}">
         <svg width="13px" height="12px" viewBox="0 0 14 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
           <title>icon-global-home</title>
           <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -69,7 +69,7 @@
       </a>
       <ul>
         {% for post in site.categories.release %}
-          <li class="mobile-nav-menu__tag"><a href="/articles/{{post.title | downcase | split: ' ' | join: '-'}}.html">{{post.title}}</a></li>
+          <li class="mobile-nav-menu__tag"><a href="{{site.baseurl}}articles/{{post.title | downcase | split: ' ' | join: '-'}}.html">{{post.title}}</a></li>
         {% endfor %}
       </ul>
     </li>

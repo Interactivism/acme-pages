@@ -36,9 +36,9 @@ jQuery(function() {
   });
 
   if (pageVersion) {   
-    window.data = $.getJSON('/version/'+pageVersion+'/search.json');
+    window.data = $.getJSON('{{site.baseurl}}version/'+pageVersion+'/search.json');
   } else {
-    window.data = $.getJSON('/search.json');
+    window.data = $.getJSON('{{site.baseurl}}search.json');
   }
 
   window.data.then(function(loadedData){

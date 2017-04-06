@@ -2,7 +2,7 @@
 # Site
 
 title: Acme docs
-baseurl: "/acme-pages"
+baseurl: "/acme-pages/"
 incremental: true
 
 permalink: /articles/:title

@@ -32,7 +32,7 @@
         </a>
         <ul>
           {% for keyword in submenu.keywords %}
-            <li class="mobile-nav-menu__tag"><a href="/category/{{keyword | downcase | split: ' ' | join: '-'}}/">{{keyword}}</a></li>
+            <li class="mobile-nav-menu__tag"><a href="{{site.baseurl}}category/{{keyword | downcase | split: ' ' | join: '-'}}/">{{keyword}}</a></li>
           {% endfor %}
         </ul>
       </li>

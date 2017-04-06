@@ -19,7 +19,7 @@
     </li>
     {% for menu in site.data.installation-guide-sidebar %}
       <li class="mobile-nav-menu__item">
-        <a href="/articles/{{menu.article | downcase | split: ' ' | join: '-'}}.html" class="mobile-nav-menu__link {% if page.title == menu.article or menu.subarticles contains page.title %}opened{% endif %}">
+        <a href="{{site.baseurl}}articles/{{menu.article | downcase | split: ' ' | join: '-'}}.html" class="mobile-nav-menu__link {% if page.title == menu.article or menu.subarticles contains page.title %}opened{% endif %}">
           <svg width="13px" height="8px" viewBox="0 0 10 6" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="caret-off">
               <title>global-caret-off</title>
               <g id="Interactivism-Documentation-Project-2017-03-01" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -32,7 +32,7 @@
         </a>
         <ul>
           {% for post in menu.subarticles %}
-            <li class="mobile-nav-menu__tag"><a href="/articles/{{post | downcase | split: ' ' | join: '-'}}.html">{{post}}</a></li>
+            <li class="mobile-nav-menu__tag"><a href="{{site.baseurl}}articles/{{post | downcase | split: ' ' | join: '-'}}.html">{{post}}</a></li>
           {% endfor %}
         </ul>
       </li>

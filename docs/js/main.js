@@ -11,13 +11,13 @@ $(function(){
     if (pageVersion && pageVersion == docVersions[i]) {
       $('.versions-dropdown').prepend('Version '+pageVersion);
     } else {
-      listVersions += '<li class="versions-list__item"><a href="/version/'+docVersions[i]+'/">Version '+docVersions[i]+'</a></li>';
+      listVersions += '<li class="versions-list__item"><a href="/acme-pages/version/'+docVersions[i]+'/">Version '+docVersions[i]+'</a></li>';
     }
   }
 
   if (pageVersion) {
     $('.version-number').append(pageVersion);
-    $('.versions-list').prepend('<li class="versions-list__item last-version"><a href="/">Version '+lastVersion+'</a></li>');
+    $('.versions-list').prepend('<li class="versions-list__item last-version"><a href="/acme-pages/">Version '+lastVersion+'</a></li>');
   } else {
     $('.version-number').append(lastVersion);
     $('.versions-dropdown').prepend('Version '+lastVersion);

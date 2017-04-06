@@ -32,9 +32,9 @@ jQuery(function() {
   });
 
   if (pageVersion) {   
-    window.data = $.getJSON('/version/'+pageVersion+'/search.json');
+    window.data = $.getJSON('/acme-pages/version/'+pageVersion+'/search.json');
   } else {
-    window.data = $.getJSON('/search.json');
+    window.data = $.getJSON('/acme-pages/search.json');
   }
 
   window.data.then(function(loadedData){
