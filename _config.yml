@@ -3,7 +3,6 @@
 
 title: Acme docs
 baseurl: "/acme-pages/"
-incremental: true
 
 permalink: /articles/:title
 
