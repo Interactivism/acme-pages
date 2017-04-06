@@ -16,7 +16,7 @@ jQuery(function() {
 
   var sortBy = $('#sort-by');
 
-  if(!localStorage.getItem('sorting')){
+  if(!localStorage.getItem('sorting') && sortBy.html()){
     localStorage.setItem('sorting', sortBy.html());
   } else {
     var sorting = localStorage.getItem('sorting');
